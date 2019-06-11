@@ -1,18 +1,25 @@
+<script>
+import { Component, Vue } from 'vue-property-decorator';
+
+@Component({
+  components: {
+    Jumbo: () => import('@/components/Jumbo.vue'),
+  },
+})
+class Home extends Vue {
+
+}
+
+export default Home;
+</script>
+
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="Home">
+    <jumbo></jumbo>
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
-
-export default {
-  name: 'home',
-  components: {
-    HelloWorld,
-  },
-};
-</script>
+<style lang="scss">
+  .Home {
+  }
+</style>
