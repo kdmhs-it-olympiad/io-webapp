@@ -49,6 +49,7 @@
 
       i {
         padding-top: 2px;
+        width: 21px;
       }
     }
 
