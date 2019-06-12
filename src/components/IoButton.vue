@@ -29,8 +29,9 @@ export default IoButton;
 
 <style lang="scss">
   .Button {
-    padding: 18px 22px;
+    padding: 16px 20px;
     border: 2px solid transparent;
+    box-sizing: border-box;
     background-color: black;
     color: white;
 
@@ -41,7 +42,7 @@ export default IoButton;
     cursor: pointer;
 
     @media (max-width: 640px) {
-      padding: 13px 14px;
+      padding: 11px 12px;
       font-size: 14px;
     }
 
