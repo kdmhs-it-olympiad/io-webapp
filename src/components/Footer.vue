@@ -21,6 +21,9 @@
     background-color: $footer__back;
     padding: 64px 120px;
 
+    @media (max-width: 640px) {
+      padding: 40px 20px;
+    }
 
     &__copyright {
       font-size: 16px;
@@ -28,12 +31,21 @@
       color: $footer__font--copyright;
 
       margin-bottom: 12px;
+
+      @media (max-width: 640px) {
+        font-size: 14px;
+      }
     }
 
     &__information {
       font-size: 14px;
       line-height: 22px;
       color: $footer__font--info;
+
+      @media (max-width: 640px) {
+        font-size: 12px;
+        line-height: 20px;
+      }
     }
   }
 </style>
