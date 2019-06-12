@@ -37,13 +37,24 @@ export default IoButton;
     font-weight: bold;
     font-size: 20px;
 
+    transition: .3s opacity ease-in-out;
+    cursor: pointer;
+
     &--black {
-      border-color: black;
-      background-color: black;
+      border-color: #31283c;
+      background-color: #31283c;
 
       &:disabled {
         background-color: #7f7788;
         border-color: #7f7788;
+      }
+
+      &:hover {
+        opacity: .6;
+      }
+
+      &:active {
+        opacity: .8;
       }
     }
 
@@ -53,6 +64,14 @@ export default IoButton;
 
       &:disabled {
         opacity: .6;
+      }
+
+      &:hover {
+        opacity: .6;
+      }
+
+      &:active {
+        opacity: .8;
       }
     }
   }
