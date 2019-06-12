@@ -74,6 +74,7 @@ export default Navbar;
 
         @media (max-width: 640px) {
           padding-left: 12px;
+          font-size: 14px;
         }
 
         a {

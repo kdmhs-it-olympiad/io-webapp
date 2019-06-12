@@ -40,6 +40,11 @@ export default IoButton;
     transition: .3s opacity ease-in-out;
     cursor: pointer;
 
+    @media (max-width: 640px) {
+      padding: 13px 14px;
+      font-size: 14px;
+    }
+
     &--black {
       border-color: #31283c;
       background-color: #31283c;
