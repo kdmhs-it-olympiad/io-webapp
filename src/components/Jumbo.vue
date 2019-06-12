@@ -1,16 +1,16 @@
 <script>
-  import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
-  @Component({
-    components: {
-      IoButton: () => import('@/components/IoButton.vue'),
-    },
-  })
-  class Jumbo extends Vue {
+@Component({
+  components: {
+    IoButton: () => import('@/components/IoButton.vue'),
+  },
+})
+class Jumbo extends Vue {
 
-  }
+}
 
-  export default Jumbo;
+export default Jumbo;
 </script>
 
 <template>

@@ -2,6 +2,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 
+// eslint-disable-next-line
 import 'reset-css';
 import './main.scss';
 

@@ -1,21 +1,22 @@
 <script>
-  import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Component, Vue, Prop } from 'vue-property-decorator';
 
-  @Component
-  class IoButton extends Vue {
-    @Prop({ type: Boolean }) ghost;
-    @Prop({ type: Boolean }) black;
+@Component
+class IoButton extends Vue {
+  @Prop({ type: Boolean }) ghost;
 
-    get classes() {
-      return {
-        'Button': true,
-        'Button--ghost': this.ghost,
-        'Button--black': this.black,
-      }
-    }
+  @Prop({ type: Boolean }) black;
+
+  get classes() {
+    return {
+      Button: true,
+      'Button--ghost': this.ghost,
+      'Button--black': this.black,
+    };
   }
+}
 
-  export default IoButton;
+export default IoButton;
 </script>
 
 <template>

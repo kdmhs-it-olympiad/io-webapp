@@ -4,7 +4,7 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component({
   components: {
     IoFooter: () => import('@/components/Footer.vue'),
-  }
+  },
 })
 class App extends Vue {
 
