@@ -7,6 +7,8 @@ class IoButton extends Vue {
 
   @Prop({ type: Boolean }) black;
 
+  @Prop({ type: Boolean }) disabled;
+
   get classes() {
     return {
       Button: true,
@@ -20,7 +22,7 @@ export default IoButton;
 </script>
 
 <template>
-  <button :class="classes">
+  <button :class="classes" :disabled="disabled">
     <slot></slot>
   </button>
 </template>
@@ -38,11 +40,20 @@ export default IoButton;
     &--black {
       border-color: black;
       background-color: black;
+
+      &:disabled {
+        background-color: #7f7788;
+        border-color: #7f7788;
+      }
     }
 
     &--ghost {
       color: black;
-      background-color: white;
+      background-color: white !important;
+
+      &:disabled {
+        opacity: .6;
+      }
     }
   }
 </style>
