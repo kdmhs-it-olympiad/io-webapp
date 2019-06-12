@@ -3,6 +3,7 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
   components: {
+    Navbar: () => import('@/components/Navbar.vue'),
     Jumbo: () => import('@/components/Jumbo.vue'),
   },
 })
@@ -15,6 +16,7 @@ export default Home;
 
 <template>
   <div class="Home">
+    <navbar></navbar>
     <jumbo></jumbo>
   </div>
 </template>

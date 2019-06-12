@@ -30,11 +30,12 @@ export default Jumbo;
 
 <style lang="scss">
   .Jumbo {
-    padding: 172px 125px;
+    padding: 108px 125px 172px 125px;
 
     background: url('/images/jumbo-image.svg');
     background-position: right bottom;
     background-repeat: no-repeat;
+    color: #31283c;
 
     &__inner {
 
