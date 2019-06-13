@@ -41,7 +41,7 @@ export default IoButton;
     transition: .3s opacity ease-in-out;
     cursor: pointer;
 
-    @media (max-width: 640px) {
+    @media (max-width: 780px) {
       padding: 11px 12px;
       font-size: 14px;
     }

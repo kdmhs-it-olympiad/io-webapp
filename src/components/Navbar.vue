@@ -31,7 +31,7 @@ export default Navbar;
   .Navbar {
     padding: 21px 120px;
 
-    @media (max-width: 640px) {
+    @media (max-width: 780px) {
       padding: 13px 20px;
     }
 
@@ -54,7 +54,7 @@ export default Navbar;
         line-height: 22px;
         margin-left: 8px;
 
-        @media (max-width: 640px) {
+        @media (max-width: 780px) {
           display: none;
         }
       }
@@ -72,7 +72,7 @@ export default Navbar;
         transition: .3s opacity ease-in-out;
         cursor: pointer;
 
-        @media (max-width: 640px) {
+        @media (max-width: 780px) {
           padding-left: 12px;
           font-size: 14px;
         }
