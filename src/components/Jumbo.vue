@@ -1,5 +1,5 @@
 <script>
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Emit } from 'vue-property-decorator';
 
 @Component({
   components: {
@@ -7,7 +7,13 @@ import { Component, Vue } from 'vue-property-decorator';
   },
 })
 class Jumbo extends Vue {
+  requestApplyModal() {
+    this.$emit('request-open-apply-modal')
+  }
 
+  requestApplyCheckModal() {
+    this.$emit('request-open-apply-check-modal')
+  }
 }
 
 export default Jumbo;
@@ -21,8 +27,8 @@ export default Jumbo;
       <p class="Jumbo__cp">도전하세요. 그리고 도약하세요.<br>전국 중학생 IT 올림피아드는 여러분을 <span>기다리고 있습니다.</span></p>
 
       <div class="Jumbo__action">
-        <io-button black ghost>신청 확인하기</io-button>
-        <io-button black>참가 신청하기 <i class='bx bx-fw bx-right-arrow-alt'></i></io-button>
+        <io-button @click="requestApplyCheckModal" black ghost>신청 확인하기</io-button>
+        <io-button @click="requestApplyModal" black>참가 신청하기 <i class='bx bx-fw bx-right-arrow-alt'></i></io-button>
       </div>
     </div>
   </div>

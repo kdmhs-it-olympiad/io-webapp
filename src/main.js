@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import AsyncComputed from 'vue-async-computed';
+import Component from 'vue-class-component';
 import App from './App.vue';
 import router from './router';
 

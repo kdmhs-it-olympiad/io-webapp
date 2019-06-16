@@ -22,7 +22,11 @@ export default IoButton;
 </script>
 
 <template>
-  <button :class="classes" :disabled="disabled">
+  <button 
+    :class="classes" 
+    :disabled="disabled" 
+    @click.stop="$emit('click')">
+    
     <slot></slot>
   </button>
 </template>
