@@ -170,7 +170,7 @@ export default ApplyModal;
 
     <div class="ApplyModal__body">
       <form @submit.prevent="">
-        <form-header icon="user">
+        <form-header>
           <i class="bx bx-user" slot="icon"></i>
           <template>개인정보</template>
         </form-header>
