@@ -30,7 +30,7 @@ export default FormHeader;
     }
 
     &__image {
-      display: inline;
+      display: inline-block;
       font-size: 24px;
       width: 24px;
       height: 24px;
