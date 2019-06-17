@@ -380,6 +380,11 @@ export default ApplyModal;
           <div class="blank"></div>
         </form-row>
       </form>
+
+      <div style="padding-top: 16px">
+          <a href="/policy" class="ApplyModal__policy" target="_blank">개인정보 처리방침</a>
+          <p class="ApplyModal__policy--agree">전국 중학생 IT 올림피아드 참가 신청은 위 개인정보 처리방침에 동의했음을 의미합니다.</p>
+      </div>
     </div>
 
     <div class="ApplyModal__footer">
@@ -397,6 +402,17 @@ export default ApplyModal;
 
       @media (max-width: 780px) {
         padding: 20px;
+      }
+    }
+
+    &__policy {
+      font-size: 14px;
+      color: black;
+
+      &--agree {
+        margin-top: 8px;
+        font-size: 12px;
+        color: #7f7788;
       }
     }
 

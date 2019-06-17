@@ -15,5 +15,13 @@ export default new Router({
         title: '홈',
       },
     },
+    {
+      path: '/policy',
+      name: 'policy',
+      component: () => import('@/views/policy.vue'),
+      meta: {
+        title: '약관',
+      },
+    },
   ],
 });
