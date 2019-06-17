@@ -20,7 +20,7 @@ export default new Router({
       name: 'policy',
       component: () => import('@/views/policy.vue'),
       meta: {
-        title: '약관',
+        title: '개인정보 처리방침',
       },
     },
   ],
