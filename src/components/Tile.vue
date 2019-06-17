@@ -4,13 +4,14 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component
 class Tile extends Vue {
   @Prop({ default: '' }) title;
+  @Prop({ type: String }) id;
 }
 
 export default Tile;
 </script>
 
 <template>
-  <div class="Tile">
+  <div class="Tile" :id="id">
     <h3 class="Tile__title">{{ title }}</h3>
     <div class="Tile__contents">
       <slot></slot>

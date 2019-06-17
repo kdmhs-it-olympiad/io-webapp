@@ -18,6 +18,10 @@ import { Component, Vue } from 'vue-property-decorator';
 class Home extends Vue {
   applyModalVisible = false;
   applyCheckModalVisible = false;
+
+  ready() {
+    alert('준비중입니다.');
+  }
 }
 
 export default Home;
@@ -26,10 +30,10 @@ export default Home;
 <template>
   <div class="Home">
     <navbar></navbar>
-    <jumbo 
+    <jumbo
       @request-open-apply-modal="applyModalVisible = true"
-      @request-open-apply-check-modal="applyCheckModalVisible = true" />
-    
+      @request-open-apply-check-modal="ready" />
+
     <countdown></countdown>
 
     <tile-box>

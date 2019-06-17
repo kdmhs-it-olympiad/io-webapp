@@ -1,12 +1,18 @@
 <script>
 import { Component, Vue } from 'vue-property-decorator';
 import { AsyncComputed } from '@/decorators';
+import CalenderAPI from '@/api/calender';
 
 @Component
 class Countdown extends Vue {
-  @AsyncComputed()
+    @AsyncComputed({ default: '지금은요...' })
   async context() {
-    return 'function countdown() {[time]}';
+    const cal = await CalenderAPI.schedule();
+    const data = cal.status === 200
+      ? cal.data.context
+      : '알수 없어요';
+
+    return data;
   }
 }
 

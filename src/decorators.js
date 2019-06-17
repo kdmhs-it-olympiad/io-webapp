@@ -33,6 +33,4 @@ export const VModel = (options) => createDecorator((component, key) => {
       this.$emit('input', value);
     }
   }
-
-  console.log(component);
 });

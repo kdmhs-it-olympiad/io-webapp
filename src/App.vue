@@ -7,7 +7,17 @@ import { Component, Vue } from 'vue-property-decorator';
   },
 })
 class App extends Vue {
+  get isIE() {
+    const agent = navigator.userAgent.toLowerCase();
 
+    return (
+      navigator.appName == 'Netscape' &&
+      navigator.userAgent.search('Trident') != -1
+    ) ||
+    (
+      agent.indexOf("msie") != -1
+    );
+  }
 }
 
 export default App;
@@ -15,10 +25,17 @@ export default App;
 
 <template>
   <div class="App">
-    <div class="App__contents">
+    <div class="App__contents" v-if="!isIE">
       <router-view></router-view>
     </div>
-    <io-footer></io-footer>
+
+    <div v-else>
+        IE는 지원하지 않습니다.
+        <a href="https://chrome.google.com" target="_blank">
+          대체 브라우저 다운로드
+        </a>
+    </div>
+    <io-footer v-if="!isIE"></io-footer>
   </div>
 </template>
 

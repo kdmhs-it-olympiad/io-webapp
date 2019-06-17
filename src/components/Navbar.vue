@@ -3,7 +3,9 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 class Navbar extends Vue {
-
+  ready() {
+    alert('준비중입니다.');
+  }
 }
 
 export default Navbar;
@@ -18,10 +20,10 @@ export default Navbar;
       </router-link>
 
       <ul class="Navbar__links">
-        <li><a href="#">종목안내</a></li>
-        <li><a href="#">행사일정</a></li>
-        <li><a href="#">공지사항</a></li>
-        <li><a href="#">질문과 답변</a></li>
+        <li><a href="#example-tile">종목안내</a></li>
+        <li @click.stop="ready"><a href="#">행사일정</a></li>
+        <li><a href="#notice-tile">공지사항</a></li>
+        <li @click.stop="ready"><a href="#">질문과 답변</a></li>
       </ul>
     </div>
   </div>

@@ -156,7 +156,7 @@ class ApplyModal extends Vue {
     this.formDataValidate = validate;
   }
 
-  request() {
+  async request() {
     this.loading = true;
     this.validate();
 
@@ -166,10 +166,24 @@ class ApplyModal extends Vue {
       .some(Boolean);
 
     if (!a) {
-      ContestAPI.apply(this.formData).then(res => console.log(res));
-    }
+      try {
+        const result = await ContestAPI.apply(this.formData);
+        if (result.status === 200) {
+          alert('신청을 성공했습니다.');
+          location.reload();
+        } else {
+          alert('신청중에 문제가 발생했습니다.');
+          this.loading = false;
+        }
 
-    this.loading = false;
+        this.loading = false;
+      } catch (e) {
+        alert('신청중에 문제가 발생했습니다.');
+        this.loading = false;
+      }
+    } else {
+      this.loading = false;
+    }
   }
 }
 
@@ -307,9 +321,9 @@ export default ApplyModal;
             placeholder="신청할 부문을 선택하세요"
             error="신청 부문은 필수로 선택해야합니다"
             v-model="formData.sector">
-            <form-select-item value="프로그래밍">프로그래밍</form-select-item>
-            <form-select-item value="창업 아이템">창업 아이템</form-select-item>
-            <form-select-item value="컴퓨터 그래픽">컴퓨터 그래픽</form-select-item>
+            <form-select-item value="programming">프로그래밍</form-select-item>
+            <form-select-item value="business">창업 아이템</form-select-item>
+            <form-select-item value="design">컴퓨터 그래픽</form-select-item>
           </form-select>
 
           <form-file
