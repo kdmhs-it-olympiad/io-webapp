@@ -7,7 +7,7 @@ class NoticeItem extends Vue {
   @Prop({ type: Date, default: '' }) date;
 
   get dateString() {
-    return moment(this.date).format('YYYY년 MM월 DD일 hh:mm')
+    return moment(this.date).format('YYYY년 MM월 DD일 hh:mm');
   }
 }
 

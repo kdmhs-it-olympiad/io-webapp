@@ -1,5 +1,5 @@
 <script>
-import { Component, Vue, Emit } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
   components: {
@@ -8,11 +8,11 @@ import { Component, Vue, Emit } from 'vue-property-decorator';
 })
 class Jumbo extends Vue {
   requestApplyModal() {
-    this.$emit('request-open-apply-modal')
+    this.$emit('request-open-apply-modal');
   }
 
   requestApplyCheckModal() {
-    this.$emit('request-open-apply-check-modal')
+    this.$emit('request-open-apply-check-modal');
   }
 }
 
@@ -28,7 +28,10 @@ export default Jumbo;
 
       <div class="Jumbo__action">
         <io-button @click="requestApplyCheckModal" black ghost>신청 확인하기</io-button>
-        <io-button @click="requestApplyModal" black>참가 신청하기 <i class='bx bx-fw bx-right-arrow-alt'></i></io-button>
+        <io-button @click="requestApplyModal" black>
+          참가 신청하기
+          <i class='bx bx-fw bx-right-arrow-alt'></i>
+        </io-button>
       </div>
     </div>
   </div>

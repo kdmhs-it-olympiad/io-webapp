@@ -4,13 +4,14 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component
 class ExampleItem extends Vue {
   @Prop({ type: String, default: '' }) title;
+
   @Prop({ type: Boolean }) long;
 
   get contestClasses() {
     return {
-      'ExampleItem__contents': true,
+      ExampleItem__contents: true,
       'ExampleItem__contents--long': this.long,
-    }
+    };
   }
 }
 
@@ -62,7 +63,7 @@ export default ExampleItem;
 
       @media (max-width: 780px) {
         flex-flow: column nowrap;
-        
+
         p {
           margin-bottom: 10px;
         }

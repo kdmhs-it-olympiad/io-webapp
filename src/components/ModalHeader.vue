@@ -1,5 +1,5 @@
 <script>
-import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 class ModalHeader extends Vue {
@@ -14,10 +14,10 @@ export default ModalHeader;
 <template>
   <div class="ModalHeader">
     <div class="ModalHeader__cancelbox">
-      <i class='bx bx-x' @click.stop="close"></i> 
+      <i class='bx bx-x' @click.stop="close"></i>
     </div>
     <h2><slot></slot></h2>
-  </div>  
+  </div>
 </template>
 
 <style lang="scss">

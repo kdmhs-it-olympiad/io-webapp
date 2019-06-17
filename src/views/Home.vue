@@ -17,6 +17,7 @@ import { Component, Vue } from 'vue-property-decorator';
 })
 class Home extends Vue {
   applyModalVisible = false;
+
   applyCheckModalVisible = false;
 
   ready() {

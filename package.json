@@ -15,6 +15,7 @@
     "reset-css": "^4.0.1",
     "vue": "^2.6.10",
     "vue-async-computed": "^3.7.0",
+    "vue-class-component": "^7.1.0",
     "vue-property-decorator": "^8.1.1",
     "vue-router": "^3.0.3",
     "vuejs-datepicker": "^1.5.4"

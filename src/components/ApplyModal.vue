@@ -69,62 +69,36 @@ class ApplyModal extends Vue {
   loading = false;
 
   formDataValidator = {
-    name: () => {
-      return this.formData.name === '';
-    },
+    name: () => this.formData.name === '',
 
-    sex: () => {
-      return false;
-    },
+    sex: () => false,
 
-    birthday: () => {
-      return !this.formData.birthday;
-    },
+    birthday: () => !this.formData.birthday,
 
-    parentPhoneNumber: () => {
-      return this.formData.parentPhoneNumber === '';
-    },
+    parentPhoneNumber: () => this.formData.parentPhoneNumber === '',
 
-    phoneNumber: () => {
-      return this.formData.phoneNumber === '';
-    },
+    phoneNumber: () => this.formData.phoneNumber === '',
 
-    address: () => {
-      return this.formData.address.postcode === '' ||
-             this.formData.address.address === '';
-    },
+    address: () => this.formData.address.postcode === ''
+             || this.formData.address.address === '',
 
-    addressDetail: () => {
-      return this.formData.addressDetail === '';
-    },
+    addressDetail: () => this.formData.addressDetail === '',
 
-    school: () => {
-      return {
-        name: this.formData.school.name === '',
-        grade: false,
-        class: false,
-      };
-    },
+    school: () => ({
+      name: this.formData.school.name === '',
+      grade: false,
+      class: false,
+    }),
 
-    sector: () => {
-      return this.formData.sector === '';
-    },
+    sector: () => this.formData.sector === '',
 
-    lunchCount: () => {
-      return this.formData.lunchCount === '';
-    },
+    lunchCount: () => this.formData.lunchCount === '',
 
-    image: () => {
-      return !this.formData.image;
-    },
+    image: () => !this.formData.image,
 
-    password: () => {
-      return this.formData.password === '';
-    },
+    password: () => this.formData.password === '',
 
-    passwordRe: () => {
-      return this.formData.password !== this.formData.passwordRe;
-    },
+    passwordRe: () => this.formData.password !== this.formData.passwordRe,
   }
 
   grades = new Array(3)
@@ -145,13 +119,13 @@ class ApplyModal extends Vue {
 
   validate() {
     const validate = {};
-    const result = Object
+    Object
       .keys(this.formData)
       .map(k => ({
         field: k,
-        result: this.formDataValidator[k]()
+        result: this.formDataValidator[k](),
       }))
-      .forEach(r => validate[r.field] = r.result)
+      .forEach(r => validate[r.field] = r.result);
 
     this.formDataValidate = validate;
   }
@@ -162,7 +136,7 @@ class ApplyModal extends Vue {
 
     const a = Object
       .values(this.formDataValidate)
-      .flatMap(i => typeof i === 'object' ? Object.values(i) : i)
+      .flatMap(i => (typeof i === 'object' ? Object.values(i) : i))
       .some(Boolean);
 
     if (!a) {
@@ -260,7 +234,7 @@ export default ApplyModal;
             <form-select
               style="display: inline-block; width: 50%; padding-right: 5px;"
               :validate="formDataValidate.school.grade"
-							placeholder="학년을 선택"
+              placeholder="학년을 선택"
               label="학년"
               v-model="formData.school.grade">
               <form-select-item
@@ -274,7 +248,7 @@ export default ApplyModal;
             <form-select
               style="display: inline-block; width: 50%; padding-left: 5px;"
               :validate="formDataValidate.school.class"
-							placeholder="반을 선택"
+              placeholder="반을 선택"
               label="반"
               v-model="formData.school.class">
               <form-select-item
@@ -388,7 +362,9 @@ export default ApplyModal;
     </div>
 
     <div class="ApplyModal__footer">
-        <io-button @click="request" black>참가신청 하기 <i class='bx bx-fw bx-right-arrow-alt'></i></io-button>
+        <io-button @click="request" black>
+          참가신청 하기 <i class='bx bx-fw bx-right-arrow-alt'></i>
+        </io-button>
     </div>
   </modal>
 </template>

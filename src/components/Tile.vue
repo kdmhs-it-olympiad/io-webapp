@@ -4,6 +4,7 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component
 class Tile extends Vue {
   @Prop({ default: '' }) title;
+
   @Prop({ type: String }) id;
 }
 

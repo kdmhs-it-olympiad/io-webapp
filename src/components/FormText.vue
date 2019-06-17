@@ -7,9 +7,13 @@ class FormText extends Vue {
   @VModel() text;
 
   @Prop({ type: String }) error;
+
   @Prop({ type: String }) placeholder;
+
   @Prop({ type: String }) label;
+
   @Prop({ type: String }) addiction;
+
   @Prop({ type: Boolean }) validate;
 
   @Prop({ type: Boolean }) password;

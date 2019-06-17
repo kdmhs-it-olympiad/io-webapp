@@ -1,9 +1,12 @@
 <script>
-import { Component, Vue, Prop, Provide } from 'vue-property-decorator';
+import {
+  Component, Vue, Prop,
+} from 'vue-property-decorator';
 
 @Component
 class FormRadio extends Vue {
   @Prop({ type: String }) name;
+
   @Prop({ type: String }) label;
 
   @Prop({ type: String }) value;
@@ -66,4 +69,3 @@ export default FormRadio;
     }
   }
 </style>
-

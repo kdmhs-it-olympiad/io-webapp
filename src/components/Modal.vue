@@ -4,6 +4,7 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component
 class Modal extends Vue {
   @Prop({ type: String }) title;
+
   @Prop({ type: Boolean }) visible;
 
   @Prop({ type: Boolean }) loading;
@@ -18,9 +19,9 @@ class Modal extends Vue {
 
   get wrapperClasses() {
     return {
-      'Modal__wrapper': true,
+      Modal__wrapper: true,
       'Modal__wrapper--visible': this.syncedVisible,
-    }
+    };
   }
 }
 
@@ -28,7 +29,7 @@ export default Modal;
 </script>
 
 <template>
-  <div :class="wrapperClasses" @click="">
+  <div :class="wrapperClasses">
     <div class="Modal" @click.stop="">
       <slot></slot>
       <div class="Modal__loading" v-if="loading">

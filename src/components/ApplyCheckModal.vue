@@ -34,7 +34,9 @@ export default ApplyCheckModal;
     </div>
 
     <div class="ApplyCheckModal__footer">
-        <io-button @click="openModal" black>확인하고 수험표 받기 <i class='bx bx-fw bx-right-arrow-alt'></i></io-button>
+        <io-button @click="openModal" black>
+          확인하고 수험표 받기 <i class='bx bx-fw bx-right-arrow-alt'></i>
+        </io-button>
     </div>
   </modal>
 </template>
@@ -60,7 +62,7 @@ export default ApplyCheckModal;
 
       @media (max-width: 780px) {
         padding: 20px;
-      
+
         * {
           flex: 1;
         }

@@ -5,21 +5,25 @@ import { VModel } from '@/decorators';
 @Component
 class FormSelect extends Vue {
   @Prop({ type: String }) name;
+
   @Prop({ type: String }) label;
+
   @Prop({ type: String }) addiction;
+
   @Prop({ type: String }) placeholder;
 
   @Prop({ type: String }) error;
+
   @Prop({ type: Boolean }) validate;
 
   @VModel() model;
 
-	get selectClasses() {
-		return {
-			'FormSelect__inner': true,
-			'FormSelect__inner--placeholder': this.model === '',
-		}
-	}
+  get selectClasses() {
+    return {
+      FormSelect__inner: true,
+      'FormSelect__inner--placeholder': this.model === '',
+    };
+  }
 }
 
 export default FormSelect;
@@ -36,11 +40,11 @@ export default FormSelect;
         v-model="model"
         :class="selectClasses"
         :name="name">
-				<option
-					value=""
-					disabled
-					selected
-					hidden>{{ placeholder }}</option>
+        <option
+          value=""
+          disabled
+          selected
+          hidden>{{ placeholder }}</option>
         <slot></slot>
       </select>
     </div>
@@ -51,7 +55,7 @@ export default FormSelect;
 
 <style lang="scss">
   .FormSelect {
-		box-sizing: border-box;
+    box-sizing: border-box;
 
     &__container {
       border: 2px solid #494251;
@@ -60,7 +64,7 @@ export default FormSelect;
         border-color: #ff6255;
       }
     }
-    
+
     &__error {
       margin-top: 8px;
       font-size: 12px;
@@ -78,11 +82,11 @@ export default FormSelect;
       border: none;
       font-size: 14px;
       line-height: 14px;
-			margin: 0;
+      margin: 0;
 
-			&--placeholder {
-				opacity: .5;
-			}
+      &--placeholder {
+        opacity: .5;
+      }
     }
 
     &__label {

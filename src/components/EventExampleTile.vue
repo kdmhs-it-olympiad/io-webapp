@@ -1,6 +1,5 @@
 <script>
 import { Component, Vue } from 'vue-property-decorator';
-import { AsyncComputed } from '@/decorators';
 
 @Component({
   components: {
@@ -9,7 +8,7 @@ import { AsyncComputed } from '@/decorators';
   },
 })
 class EventExampleTile extends Vue {
-  
+
 }
 
 export default EventExampleTile;

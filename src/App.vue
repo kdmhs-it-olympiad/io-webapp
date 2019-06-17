@@ -11,11 +11,11 @@ class App extends Vue {
     const agent = navigator.userAgent.toLowerCase();
 
     return (
-      navigator.appName == 'Netscape' &&
-      navigator.userAgent.search('Trident') != -1
-    ) ||
-    (
-      agent.indexOf("msie") != -1
+      navigator.appName === 'Netscape'
+      && navigator.userAgent.search('Trident') !== -1
+    )
+    || (
+      agent.indexOf('msie') !== -1
     );
   }
 }

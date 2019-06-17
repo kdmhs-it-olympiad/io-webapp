@@ -5,34 +5,37 @@ import { VModel } from '@/decorators';
 @Component
 class FormAddress extends Vue {
   @Prop({ type: String }) label;
+
   @Prop({ type: String }) error;
+
   @Prop({ type: Boolean }) validate;
 
   @VModel() model;
 
-  postcode = "";
-  address = "";
+  postcode = '';
+
+  address = '';
 
   openAddress() {
-     new daum.Postcode({
-       oncomplete: (data) => {
-         const { address, zonecode } = data;
-         this.postcode = zonecode;
-         this.address = address;
+    new window.daum.Postcode({
+      oncomplete: (data) => {
+        const { address, zonecode } = data;
+        this.postcode = zonecode;
+        this.address = address;
 
-         this.model = {
-           postcode: this.postcode,
-           address: this.address,
-         }
-      }
+        this.model = {
+          postcode: this.postcode,
+          address: this.address,
+        };
+      },
     }).open();
   }
 
   get postcodeClasses() {
     return {
-      'FormAddress__postcode': true,
+      FormAddress__postcode: true,
       'FormAddress__postcode--placeholder': !this.postcode,
-    }
+    };
   }
 }
 

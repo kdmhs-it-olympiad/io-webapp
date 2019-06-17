@@ -5,15 +5,18 @@ import Datepicker from 'vuejs-datepicker';
 
 @Component({
   components: {
-    Datepicker
-  }
+    Datepicker,
+  },
 })
 class FormDate extends Vue {
   @VModel() syncedValue;
 
   @Prop({ type: String }) label;
+
   @Prop({ type: String }) placeholder;
+
   @Prop({ type: String }) error;
+
   @Prop({ type: Boolean }) validate;
 }
 

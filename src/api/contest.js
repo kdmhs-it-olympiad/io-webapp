@@ -22,18 +22,18 @@ export default {
     const formData = new FormData();
 
     Object.keys(parsedData)
-      .forEach(data => formData.append(data, parsedData[data]));
+      .forEach(v => formData.append(v, parsedData[v]));
 
     formData.append('photo', data.image);
 
     return axios.post('https://io.choich.space/contestant', formData, {
       headers: {
-        'Content-Type': 'multipart/form-data'
-      }
+        'Content-Type': 'multipart/form-data',
+      },
     });
   },
 
   confirm() {
 
   },
-}
+};

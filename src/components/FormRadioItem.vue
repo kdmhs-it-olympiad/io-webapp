@@ -1,5 +1,7 @@
 <script>
-import { Component, Vue, Prop, Inject } from 'vue-property-decorator';
+import {
+  Component, Vue, Prop,
+} from 'vue-property-decorator';
 import { VModel } from '@/decorators';
 
 @Component
@@ -7,6 +9,7 @@ class FormRadioItem extends Vue {
   @VModel() syncedValue;
 
   @Prop({ type: String }) item;
+
   @Prop({ type: String }) name;
 }
 
@@ -57,4 +60,3 @@ export default FormRadioItem;
     }
   }
 </style>
-

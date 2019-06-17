@@ -5,11 +5,17 @@ import { VModel } from '@/decorators';
 @Component
 class FormFile extends Vue {
   @Prop({ type: String }) name;
+
   @Prop({ type: String }) label;
+
   @Prop({ type: String }) button;
+
   @Prop({ type: String }) placeholder;
+
   @Prop({ type: String }) description;
+
   @Prop({ type: String }) error;
+
   @Prop({ type: String, default: '' }) files;
 
   @Prop({ type: Boolean, default: false }) validate;
@@ -25,16 +31,14 @@ class FormFile extends Vue {
   }
 
   processFile(event) {
-    console.log(event);
-    this.file = event.target.files[0];
-    this.model = this.file;
+    [this.model] = event.target.files;
   }
 
   get imagenameClasses() {
     return {
-      'FormFile__imagename': true,
+      FormFile__imagename: true,
       'FormFile__imagename--placeholder': !this.filename,
-    }
+    };
   }
 }
 
@@ -45,7 +49,7 @@ export default FormFile;
   <div class="FormFile">
     <p class="FormFile__label">{{ label }}</p>
 
-    <div 
+    <div
       class="FormFile__container"
       :class="{ 'FormFile__container--error': validate }">
       <div :class="imagenameClasses">
@@ -119,7 +123,7 @@ export default FormFile;
         opacity: .7;
       }
     }
-    
+
     &__error {
       margin-top: 8px;
       font-size: 12px;

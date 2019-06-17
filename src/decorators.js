@@ -1,6 +1,6 @@
 import { createDecorator } from 'vue-class-component';
 
-export const AsyncComputed = (options) => createDecorator((component, key) => {
+export const AsyncComputed = options => createDecorator((component, key) => {
   if (!component.methods[key]) {
     console.error('AsyncComputed decorator can only attach to method');
   }
@@ -19,18 +19,18 @@ export const AsyncComputed = (options) => createDecorator((component, key) => {
   }
 });
 
-export const VModel = (options) => createDecorator((component, key) => {
+export const VModel = () => createDecorator((component, key) => {
   component.props = component.props || {};
   component.computed = component.computed || {};
 
-  component.props['value'] = {};
+  component.props.value = {};
   component.computed[key] = {
     get() {
-      return this['value'];
+      return this.value;
     },
 
     set(value) {
       this.$emit('input', value);
-    }
-  }
+    },
+  };
 });

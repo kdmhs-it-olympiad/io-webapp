@@ -1,6 +1,5 @@
 <script>
 import { Component, Vue } from 'vue-property-decorator';
-import { AsyncComputed } from '@/decorators';
 
 @Component({
   components: {
@@ -9,7 +8,7 @@ import { AsyncComputed } from '@/decorators';
   },
 })
 class NoticeTile extends Vue {
-  
+
 }
 
 export default NoticeTile;
@@ -41,6 +40,6 @@ export default NoticeTile;
       color: $tile__font;
       font-weight: bold;
       float: right;
-    }    
+    }
   }
 </style>
