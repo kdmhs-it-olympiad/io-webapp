@@ -5,7 +5,7 @@ export default {
     const parsedData = {
       name: data.name,
       gender: data.sex,
-      birth: data.birthday,
+      birth: data.birthday.toISOString().split('T')[0],
       agent_phone: data.parentPhoneNumber,
       phone: data.phoneNumber,
       school: data.school.name,

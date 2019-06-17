@@ -78,7 +78,7 @@ class ApplyModal extends Vue {
     },
 
     birthday: () => {
-      return this.formData.birthday === '';
+      return !this.formData.birthday;
     },
 
     parentPhoneNumber: () => {
