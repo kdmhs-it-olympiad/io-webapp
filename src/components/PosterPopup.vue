@@ -48,7 +48,7 @@ export default PosterPopup;
   @media (max-width: 780px) {
     margin: 0;
     width: 100vw !important;
-    padding: 50px;
+    padding: 50px 10px;
   }
 
   &__image {
@@ -62,6 +62,12 @@ export default PosterPopup;
     right: 24px;
     font-size: 48px;
     color: white;
+
+    @media (max-width: 780px) {
+      font-size: 36px;
+      top: 0;
+      right: 0;
+    }
   }
 
   &__cancel i {
