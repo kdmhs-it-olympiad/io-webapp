@@ -1,20 +1,38 @@
 <script>
 import { Component, Vue, Prop } from 'vue-property-decorator';
-import { setTimeout } from 'timers';
+import contest from '@/api/contest';
 
 @Component({
   components: {
     Modal: () => import('@/components/Modal.vue'),
     ModalHeader: () => import('@/components/ModalHeader.vue'),
     IoButton: () => import('@/components/IoButton.vue'),
+
+    FormRow: () => import('@/components/FormRow.vue'),
+    FormText: () => import('@/components/FormText.vue'),
   },
 })
 class ApplyCheckModal extends Vue {
   @Prop({ type: Boolean }) visible;
 
-  result = null
+  result = null;
 
-  isLoading = false
+  isLoading = false;
+
+  formData = {
+    phoneNumber: '',
+    password: '',
+  };
+
+  formDataValidate = {
+    phoneNumber: false,
+    password: false,
+  };
+
+  formDataValidator = {
+    phoneNumber: () => this.formData.phoneNumber === '',
+    password: () => this.formData.password === '',
+  };
 
   get syncedVisible() {
     return this.visible;
@@ -24,20 +42,58 @@ class ApplyCheckModal extends Vue {
     this.$emit('update:visible', v);
   }
 
-  submit() {
+  validate() {
+    let flag = true;
+
+    Object.keys(this.formDataValidator)
+      .map(k => [k, this.formDataValidator[k]()])
+      .forEach(([field, result]) => {
+        this.formDataValidate[field] = result;
+        if (result) flag = false;
+      });
+
+    return flag;
+  }
+
+  reset() {
+    this.result = null;
+  }
+
+  async submit() {
+    if (!this.validate()) return;
+
     this.isLoading = true;
-    setTimeout(() => {
+
+    try {
+      const result = await contest.checkApply(this.formData);
+
       this.result = {
-        name: '박성민',
-        imageUrl: 'http://www.breaknews.com/imgdata/breaknews_com/201707/2017073006581213.jpg',
-        school: '한국디지털미디어고등학교',
-        grade: 3,
-        class: 3,
-        lunchCount: 2,
-        sector: '프로그래밍',
+        name: result.data.name,
+        imageUrl: result.data.photo,
+        school: result.data.school,
+        grade: result.data.grade,
+        class: result.data.klass,
+        sector: result.data.sector,
       };
+    } catch (err) {
+      if (!err.response) alert('네트워크 연결에 문제가 있습니다.');
+      else {
+        switch (err.response.status) {
+          case 401:
+            alert('비밀번호가 틀렸습니다.');
+            this.formData.password = '';
+            break;
+          case 404:
+            this.result = {};
+            break;
+          default:
+            alert('서버에 문제가 있습니다.');
+            break;
+        }
+      }
+    } finally {
       this.isLoading = false;
-    }, 1000);
+    }
   }
 
   downloadAdmission() {
@@ -46,7 +102,7 @@ class ApplyCheckModal extends Vue {
 
   closeModal() {
     this.syncedVisible = false;
-    setTimeout(() => this.result = null, 500);
+    setTimeout(() => this.reset(), 500);
   }
 
   get modalWidth() {
@@ -63,6 +119,26 @@ export default ApplyCheckModal;
       <modal-header @close="closeModal()">참가신청 확인</modal-header>
 
       <div class="ApplyCheckModal__body">
+        <form @submit.prevent>
+          <form-row>
+            <form-text
+              v-model="formData.phoneNumber"
+              :validate="formDataValidate.phoneNumber"
+              label="법정대리인 전화번호"
+              error="전화번호는 필수로 입력해야 합니다"
+              placeholder="신청할 때 등록했던 전화번호를 입력하세요">
+            </form-text>
+
+            <form-text
+              v-model="formData.password"
+              password
+              :validate="formDataValidate.password"
+              label="신청 확인용 비밀번호"
+              error="비밀번호는 필수로 입력해야 합니다"
+              placeholder="신청할 때 등록했던 비밀번호를 입력하세요">
+            </form-text>
+          </form-row>
+        </form>
       </div>
 
       <div class="ApplyCheckModal__footer">
@@ -85,7 +161,7 @@ export default ApplyCheckModal;
               {{ `${result.school} ${result.grade}학년 ${result.class}반` }}
             </p>
             <p class="ApplyCheckModal__text">
-              {{ `${result.sector} 부문 · 점심식사 ${result.lunchCount}명` }}
+              {{ `${result.sector} 부문` }}
             </p>
           </div>
         </div>

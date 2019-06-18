@@ -33,7 +33,12 @@ export default {
     });
   },
 
-  confirm() {
-
+  checkApply(data) {
+    return axios.get('https://io.choich.space/contestant', {
+      params: {
+        agent_phone: data.phoneNumber,
+        password: data.password,
+      },
+    });
   },
 };
