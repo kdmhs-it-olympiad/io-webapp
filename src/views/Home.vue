@@ -1,18 +1,24 @@
 <script>
 import { Component, Vue } from 'vue-property-decorator';
+import Navbar from '@/components/Navbar.vue';
+import Jumbo from '@/components/Jumbo.vue';
+import TileBox from '@/components/TileBox.vue';
+import NoticeTile from '@/components/NoticeTile.vue';
+import EventExampleTile from '@/components/EventExampleTile.vue';
+import Countdown from '@/components/Countdown.vue';
 
 @Component({
   components: {
-    Navbar: () => import('@/components/Navbar.vue'),
-    Jumbo: () => import('@/components/Jumbo.vue'),
-    TileBox: () => import('@/components/TileBox.vue'),
-    NoticeTile: () => import('@/components/NoticeTile.vue'),
-    EventExampleTile: () => import('@/components/EventExampleTile.vue'),
+    Navbar,
+    Jumbo,
+    TileBox,
+    NoticeTile,
+    EventExampleTile,
 
     ApplyModal: () => import('@/components/ApplyModal.vue'),
     ApplyCheckModal: () => import('@/components/ApplyCheckModal.vue'),
 
-    Countdown: () => import('@/components/Countdown.vue'),
+    Countdown,
   },
 })
 class Home extends Vue {

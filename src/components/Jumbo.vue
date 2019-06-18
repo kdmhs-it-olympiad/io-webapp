@@ -1,9 +1,10 @@
 <script>
 import { Component, Vue } from 'vue-property-decorator';
+import IoButton from './IoButton.vue';
 
 @Component({
   components: {
-    IoButton: () => import('@/components/IoButton.vue'),
+    IoButton,
   },
 })
 class Jumbo extends Vue {
