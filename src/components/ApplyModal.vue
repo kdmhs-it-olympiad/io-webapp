@@ -44,7 +44,7 @@ class ApplyModal extends Vue {
     image: '',
     password: '',
     passwordRe: '',
-  }
+  };
 
   formDataValidate = {
     name: false,
@@ -64,7 +64,7 @@ class ApplyModal extends Vue {
     image: false,
     password: false,
     passwordRe: false,
-  }
+  };
 
   loading = false;
 
@@ -99,7 +99,7 @@ class ApplyModal extends Vue {
     password: () => this.formData.password === '',
 
     passwordRe: () => this.formData.password !== this.formData.passwordRe,
-  }
+  };
 
   grades = new Array(3)
     .fill(0)

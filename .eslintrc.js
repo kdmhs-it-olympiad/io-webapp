@@ -3,6 +3,9 @@ module.exports = {
   env: {
     node: true,
   },
+  plugins: [
+    'babel',
+  ],
   extends: [
     'plugin:vue/essential',
     '@vue/airbnb',
@@ -15,6 +18,7 @@ module.exports = {
     'no-alert': 'off',
     'no-return-assign': 'off',
     'no-restricted-globals': 'off',
+    'babel/semi': 1,
   },
   parserOptions: {
     parser: 'babel-eslint',
