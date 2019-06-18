@@ -9,6 +9,8 @@ class Modal extends Vue {
 
   @Prop({ type: Boolean }) loading;
 
+  @Prop({ type: String, default: '50vw' }) width;
+
   get syncedVisible() {
     return this.visible;
   }
@@ -23,14 +25,17 @@ class Modal extends Vue {
       'Modal__wrapper--visible': this.syncedVisible,
     };
   }
-}
 
+  get computedStyle() {
+    return `width: ${this.width || '50vw'}`;
+  }
+}
 export default Modal;
 </script>
 
 <template>
   <div :class="wrapperClasses">
-    <div class="Modal" @click.stop="">
+    <div class="Modal" @click.stop="" :style="computedStyle">
       <slot></slot>
       <div class="Modal__loading" v-if="loading">
         <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
@@ -42,7 +47,6 @@ export default Modal;
 <style lang="scss">
   .Modal {
     background-color: white;
-    width: 50vw;
     margin: 15vh auto;
     box-sizing: border-box;
     position: relative;
