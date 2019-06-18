@@ -53,7 +53,7 @@ export default Modal;
 
     @media (max-width: 780px) {
       margin: 0;
-      width: 100vw;
+      width: 100vw !important;
     }
 
     &__loading {
