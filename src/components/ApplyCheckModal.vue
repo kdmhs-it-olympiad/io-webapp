@@ -1,20 +1,15 @@
 <script>
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import contest from '@/api/contest';
-import Modal from './Modal.vue';
-import ModalHeader from './ModalHeader.vue';
-import IoButton from './IoButton.vue';
-import FormRow from './FormRow.vue';
-import FormText from './FormText.vue';
 
 @Component({
   components: {
-    Modal,
-    ModalHeader,
-    IoButton,
+    Modal: () => import('@/components/Modal.vue'),
+    ModalHeader: () => import('@/components/ModalHeader.vue'),
+    IoButton: () => import('@/components/IoButton.vue'),
 
-    FormRow,
-    FormText,
+    FormRow: () => import('@/components/FormRow.vue'),
+    FormText: () => import('@/components/FormText.vue'),
   },
 })
 class ApplyCheckModal extends Vue {

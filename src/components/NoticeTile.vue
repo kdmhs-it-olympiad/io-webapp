@@ -1,12 +1,10 @@
 <script>
 import { Component, Vue } from 'vue-property-decorator';
-import Tile from './Tile.vue';
-import NoticeItem from './NoticeItem.vue';
 
 @Component({
   components: {
-    Tile,
-    NoticeItem,
+    Tile: () => import('@/components/Tile.vue'),
+    NoticeItem: () => import('@/components/NoticeItem.vue'),
   },
 })
 class NoticeTile extends Vue {
