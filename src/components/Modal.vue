@@ -21,7 +21,7 @@ class Modal extends Vue {
 
   get wrapperClasses() {
     return {
-      Modal__wrapper: true,
+      'Modal__wrapper': true,
       'Modal__wrapper--visible': this.syncedVisible,
     };
   }
