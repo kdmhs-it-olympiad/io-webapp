@@ -22,16 +22,15 @@ class FormFile extends Vue {
 
   @VModel() model;
 
-  file = null;
-
   get filename() {
-    if (!this.file) return '';
+    if (!this.model) return '';
 
-    return this.file.name || '';
+    return this.model.name || '';
   }
 
   processFile(event) {
     [this.model] = event.target.files;
+    console.log(this.model);
   }
 
   get imagenameClasses() {
@@ -109,7 +108,7 @@ export default FormFile;
       width: calc(100% - 105px);
 
       p {
-        overflow: hidden;
+        overflow-y: hidden;
         font-size: 14px;
       }
 
