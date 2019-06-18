@@ -1,9 +1,10 @@
 <script>
 import { Component, Vue } from 'vue-property-decorator';
+import IoFooter from '@/components/Footer.vue';
 
 @Component({
   components: {
-    IoFooter: () => import('@/components/Footer.vue'),
+    IoFooter,
   },
 })
 class App extends Vue {

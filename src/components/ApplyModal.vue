@@ -1,23 +1,36 @@
 <script>
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import ContestAPI from '@/api/contest';
+import Modal from './Modal.vue';
+import ModalHeader from './ModalHeader.vue';
+import IoButton from './IoButton.vue';
+import FormRow from './FormRow.vue';
+import FormRadio from './FormRadio.vue';
+import FormRadioItem from './FormRadioItem.vue';
+import FormSelect from './FormSelect.vue';
+import FormSelectItem from './FormSelectItem.vue';
+import FormAddress from './FormAddress.vue';
+import FormDate from './FormDate.vue';
+import FormHeader from './FormHeader.vue';
+import FormFile from './FormFile.vue';
+import FormText from './FormText.vue';
 
 @Component({
   components: {
-    Modal: () => import('@/components/Modal.vue'),
-    ModalHeader: () => import('@/components/ModalHeader.vue'),
-    IoButton: () => import('@/components/IoButton.vue'),
+    Modal,
+    ModalHeader,
+    IoButton,
 
-    FormRow: () => import('@/components/FormRow.vue'),
-    FormRadio: () => import('@/components/FormRadio.vue'),
-    FormSelect: () => import('@/components/FormSelect.vue'),
-    FormSelectItem: () => import('@/components/FormSelectItem.vue'),
-    FormRadioItem: () => import('@/components/FormRadioItem.vue'),
-    FormAddress: () => import('@/components/FormAddress.vue'),
-    FormDate: () => import('@/components/FormDate.vue'),
-    FormHeader: () => import('@/components/FormHeader.vue'),
-    FormFile: () => import('@/components/FormFile.vue'),
-    FormText: () => import('@/components/FormText.vue'),
+    FormRow,
+    FormRadio,
+    FormSelect,
+    FormSelectItem,
+    FormRadioItem,
+    FormAddress,
+    FormDate,
+    FormHeader,
+    FormFile,
+    FormText,
   },
 })
 class ApplyModal extends Vue {

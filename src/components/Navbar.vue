@@ -23,7 +23,7 @@ export default Navbar;
         <li><a href="#example-tile">종목안내</a></li>
         <li @click.stop="ready"><a href="#">행사일정</a></li>
         <li><a href="#notice-tile">공지사항</a></li>
-        <li @click.stop="ready"><a href="#">질문과 답변</a></li>
+        <li><router-link to="/qna">질문과 답변</router-link></li>
       </ul>
     </div>
   </div>

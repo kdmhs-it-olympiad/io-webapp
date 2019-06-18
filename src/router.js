@@ -16,6 +16,14 @@ export default new Router({
       },
     },
     {
+      path: '/qna',
+      name: 'qna',
+      component: () => import('@/views/QnA.vue'),
+      meta: {
+        title: '질문과 답변',
+      },
+    },
+    {
       path: '/policy',
       name: 'policy',
       component: () => import('@/views/policy.vue'),
