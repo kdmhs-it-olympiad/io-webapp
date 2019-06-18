@@ -6,6 +6,7 @@ import TileBox from '@/components/TileBox.vue';
 import NoticeTile from '@/components/NoticeTile.vue';
 import EventExampleTile from '@/components/EventExampleTile.vue';
 import Countdown from '@/components/Countdown.vue';
+import PosterPopup from '@/components/PosterPopup.vue';
 
 @Component({
   components: {
@@ -15,6 +16,7 @@ import Countdown from '@/components/Countdown.vue';
     NoticeTile,
     EventExampleTile,
 
+    PosterPopup,
     ApplyModal: () => import('@/components/ApplyModal.vue'),
     ApplyCheckModal: () => import('@/components/ApplyCheckModal.vue'),
 
@@ -25,6 +27,14 @@ class Home extends Vue {
   applyModalVisible = false;
 
   applyCheckModalVisible = false;
+
+  posterPopup = false;
+
+  mounted() {
+    setTimeout(() => {
+      this.posterPopup = true;
+    }, 1000);
+  }
 
   ready() {
     alert('준비중입니다.');
@@ -50,6 +60,7 @@ export default Home;
 
     <apply-modal :visible.sync="applyModalVisible"></apply-modal>
     <apply-check-modal :visible.sync="applyCheckModalVisible"></apply-check-modal>
+    <poster-popup :visible.sync="posterPopup"></poster-popup>
   </div>
 </template>
 
