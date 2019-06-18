@@ -1,13 +1,13 @@
 <script>
 import { Component, Vue, Prop } from 'vue-property-decorator';
-import moment from 'moment';
+import format from 'date-fns/format';
 
 @Component
 class NoticeItem extends Vue {
   @Prop({ type: Date, default: '' }) date;
 
   get dateString() {
-    return moment(this.date).format('YYYY년 MM월 DD일 hh:mm');
+    return format(this.date, 'YYYY년 MM월 DD일 hh:mm');
   }
 }
 
