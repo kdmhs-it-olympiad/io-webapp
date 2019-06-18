@@ -27,6 +27,7 @@ export default ModalHeader;
     font-size: 48px;
     font-weight: bold;
     padding: 24px;
+    line-height: 1.33;
 
     h2 {
       margin-left: 56px;
