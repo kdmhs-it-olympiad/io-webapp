@@ -9,6 +9,11 @@ import router from './router';
 import 'reset-css';
 import './main.scss';
 
+import poster from '@/assets/img/poster.jpg';
+
+const image = new Image();
+image.src = poster;
+
 Vue.config.productionTip = false;
 Vue.use(AsyncComputed);
 
