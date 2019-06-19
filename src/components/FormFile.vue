@@ -30,7 +30,6 @@ class FormFile extends Vue {
 
   processFile(event) {
     [this.model] = event.target.files;
-    console.log(this.model);
   }
 
   get imagenameClasses() {
@@ -108,7 +107,6 @@ export default FormFile;
       width: calc(100% - 105px);
 
       p {
-        overflow-x: hidden;
         font-size: 14px;
       }
 

@@ -41,4 +41,18 @@ export default {
       },
     });
   },
+
+  uploadPhoto(data) {
+    const formData = new FormData();
+
+    formData.append('photo', data.photo);
+    formData.append('agent_phone', data.phoneNumber);
+    formData.append('password', data.password);
+
+    return axios.patch('https://io.choich.space/contestant', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+  },
 };
