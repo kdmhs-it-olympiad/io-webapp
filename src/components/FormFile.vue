@@ -53,8 +53,8 @@ export default FormFile;
       :class="{ 'FormFile__container--error': validate }">
       <div :class="imagenameClasses">
         <p>
-          <span v-if="filename">{{ filename }}</span>
-          <span v-else>{{ placeholder }}</span>
+          <template v-if="filename">{{ filename }}</template>
+          <template v-else>{{ placeholder }}</template>
         </p>
       </div>
 
@@ -102,18 +102,13 @@ export default FormFile;
     &__imagename {
       box-sizing: border-box;
       font-size: 14px;
-      padding: 10px 13px;
+      padding: 0 13px;
       border: none;
       pointer-events: none;
       width: calc(100% - 105px);
 
       p {
-        overflow-y: hidden;
-        font-size: 14px;
-      }
-
-      span {
-        white-space: nowrap;
+        overflow-x: hidden;
         font-size: 14px;
       }
 
