@@ -49,7 +49,7 @@ export default Home;
     <navbar></navbar>
     <jumbo
       @request-open-apply-modal="applyModalVisible = true"
-      @request-open-apply-check-modal="ready" />
+      @request-open-apply-check-modal="applyCheckModalVisible = true" />
 
     <countdown></countdown>
 

@@ -314,10 +314,10 @@ export default ApplyModal;
           </form-select>
 
           <form-file
-            label="신청자 얼굴 사진"
+            label="신청자 증명사진"
             :validate="formDataValidate.image"
             placeholder="이미지를 올리세요"
-            error="얼굴 사진은 필수로 올려야합니다"
+            error="증명사진은 필수로 올려야합니다"
             button="이미지 업로드"
             files=".png, .jpg, .jpeg"
             description="* 일체의 수정을 거치지 않은 명함판 사진(여권용, 5cm X 7cm)만 등록 가능합니다"
@@ -376,7 +376,7 @@ export default ApplyModal;
 
     <div class="ApplyModal__footer">
         <io-button @click="request" black>
-          참가신청 하기 <i class='bx bx-fw bx-right-arrow-alt'></i>
+          참가 신청하기 <i class='bx bx-fw bx-right-arrow-alt'></i>
         </io-button>
     </div>
   </modal>
