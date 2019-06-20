@@ -22,6 +22,11 @@ export default NoticeTile;
     class="Notice"
     title="공지사항">
 
+    <notice-item :date="new Date(1561014004226)">
+      컴퓨터그래픽 부문과 창업아이템 부문의 사전예선과제는 7월 8일(월) 오전 10시에 대회홈페이지에 공개됩니다.
+      제출은 7월 14일(일) 오후 6시까지 입니다.
+    </notice-item>
+
     <notice-item :date="new Date(1560835611934)">
       신청 확인은 2019년 6월 19일 13시부터 확인 가능합니다.
     </notice-item>
