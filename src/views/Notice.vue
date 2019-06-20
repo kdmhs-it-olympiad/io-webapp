@@ -7,13 +7,13 @@ import PageHero from '@/components/PageHero.vue';
     PageHero,
   },
 })
-class QnA extends Vue {
+class Notice extends Vue {
   mounted() {
     this.$store.commit('updateNavbar', { invert: true });
   }
 }
 
-export default QnA;
+export default Notice;
 </script>
 
 <template>
