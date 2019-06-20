@@ -40,9 +40,9 @@ export default Navbar;
         'Navbar__links': true,
         'Navbar__links--invert': navbar.invert,
       }">
-        <li><a href="#example-tile">종목안내</a></li>
+        <li><a href="/#example-tile">종목안내</a></li>
         <li><router-link to="/info">대회 정보</router-link></li>
-        <li><a href="#notice-tile">공지사항</a></li>
+        <li><a href="/#notice-tile">공지사항</a></li>
         <li><router-link to="/qna">질문과 답변</router-link></li>
       </ul>
     </div>
