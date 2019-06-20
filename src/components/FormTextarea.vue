@@ -63,13 +63,14 @@ export default FormTextarea;
     }
 
     &__input {
-      font-size: 14px;
+      font-size: 16px;
       width: 100%;
       border: 2px solid #494251;
       border-radius: 0;
       padding: 11px 10px;
       outline: none;
       line-height: 18px;
+      resize: none;
       box-sizing: border-box;
       -webkit-appearance: none;
 
@@ -83,6 +84,10 @@ export default FormTextarea;
 
       &--invalid {
         border-color: #ff6255;
+      }
+
+      &::placeholder {
+        font-size: 16px;
       }
     }
   }
