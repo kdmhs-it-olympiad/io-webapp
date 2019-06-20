@@ -80,10 +80,7 @@ export default ExampleItem;
 
     &__description {
       margin-right: 8px;
-
-      @media (max-width: 780px) {
-        line-height: 24px;
-      }
+      line-height: 1.5;
     }
 
     &__link {
