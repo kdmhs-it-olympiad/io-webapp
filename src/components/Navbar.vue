@@ -54,7 +54,7 @@ export default Navbar;
     padding: 21px 120px;
     transition: background-color 0.5s;
 
-    @media (max-width: 780px) {
+    @media (max-width: 1080px) {
       padding: 13px 20px;
     }
 
@@ -103,7 +103,7 @@ export default Navbar;
         transition: .3s opacity ease-in-out;
         cursor: pointer;
 
-        @media (max-width: 780px) {
+        @media (max-width: 1080px) {
           padding-left: 12px;
           font-size: 14px;
         }

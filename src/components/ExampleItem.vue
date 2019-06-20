@@ -51,7 +51,7 @@ export default ExampleItem;
       font-weight: bold;
       margin-bottom: 16px;
 
-      @media (max-width: 780px) {
+      @media (max-width: 1080px) {
         font-size: 16px;
         margin-bottom: 8px;
       }
@@ -61,7 +61,7 @@ export default ExampleItem;
       display: flex;
       font-size: 16px;
 
-      @media (max-width: 780px) {
+      @media (max-width: 1080px) {
         flex-flow: column nowrap;
 
         p {

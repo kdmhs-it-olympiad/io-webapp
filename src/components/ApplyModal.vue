@@ -389,7 +389,7 @@ export default ApplyModal;
     &__body {
       padding: 24px 80px;
 
-      @media (max-width: 780px) {
+      @media (max-width: 1080px) {
         padding: 20px;
       }
     }
@@ -412,7 +412,7 @@ export default ApplyModal;
       flex-flow: row nowrap;
       justify-content: center;
 
-      @media (max-width: 780px) {
+      @media (max-width: 1080px) {
         padding: 20px;
 
         * {

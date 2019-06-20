@@ -27,7 +27,7 @@ export default NoticeItem;
   .NoticeItem {
     margin-bottom: 40px;
 
-    @media (max-width: 780px) {
+    @media (max-width: 1080px) {
       margin-bottom: 32px;
     }
 

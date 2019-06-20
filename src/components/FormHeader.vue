@@ -24,7 +24,7 @@ export default FormHeader;
       font-weight: bold;
       display: inline;
 
-      @media (max-width: 780px) {
+      @media (max-width: 1080px) {
         font-size: 16px;
       }
     }
@@ -36,7 +36,7 @@ export default FormHeader;
       height: 24px;
       margin-right: 4px;
 
-      @media (max-width: 780px) {
+      @media (max-width: 1080px) {
         font-size: 16px;
         width: 16px;
         height: 16px;

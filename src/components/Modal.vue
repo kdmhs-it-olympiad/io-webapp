@@ -51,7 +51,7 @@ export default Modal;
     box-sizing: border-box;
     position: relative;
 
-    @media (max-width: 780px) {
+    @media (max-width: 1080px) {
       margin: 0;
       width: 100vw !important;
       min-height: 100vh;

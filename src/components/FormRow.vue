@@ -25,13 +25,13 @@ export default FormRow;
       margin-bottom: 0;
     }
 
-    @media (max-width: 780px) {
+    @media (max-width: 1080px) {
       flex-direction: column;
       margin-bottom: 0;
     }
 
     .blank {
-      @media (max-width: 780px) {
+      @media (max-width: 1080px) {
         display: none;
       }
     }
@@ -41,7 +41,7 @@ export default FormRow;
       box-sizing: border-box;
       margin-right: 20px;
 
-      @media (max-width: 780px) {
+      @media (max-width: 1080px) {
         margin-right: 0;
         margin-bottom: 16px;
       }

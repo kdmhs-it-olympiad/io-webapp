@@ -28,7 +28,7 @@ export default Tile;
     padding: 120px;
     flex: 1;
 
-    @media (max-width: 780px) {
+    @media (max-width: 1080px) {
       padding: 40px 20px;
     }
 
@@ -38,7 +38,7 @@ export default Tile;
 
       margin-bottom: 80px;
 
-      @media (max-width: 780px) {
+      @media (max-width: 1080px) {
         font-size: 24px;
         margin-bottom: 32px;
       }
@@ -51,7 +51,7 @@ export default Tile;
     &__footer {
       margin-top: 56px;
 
-      @media (max-width: 780px) {
+      @media (max-width: 1080px) {
         margin-top: 32px;
       }
     }

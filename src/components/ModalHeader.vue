@@ -33,7 +33,7 @@ export default ModalHeader;
       margin-left: 56px;
     }
 
-    @media (max-width: 780px) {
+    @media (max-width: 1080px) {
       display: flex;
       flex-flow: row-reverse nowrap;
       justify-content: space-between;

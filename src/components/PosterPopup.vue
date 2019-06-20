@@ -45,7 +45,7 @@ export default PosterPopup;
   box-sizing: border-box;
   padding: 50px 0;
 
-  @media (max-width: 780px) {
+  @media (max-width: 1080px) {
     margin: 0;
     width: 100vw !important;
     padding: 50px 10px;
@@ -63,7 +63,7 @@ export default PosterPopup;
     font-size: 48px;
     color: white;
 
-    @media (max-width: 780px) {
+    @media (max-width: 1080px) {
       font-size: 36px;
       top: 0;
       right: 0;

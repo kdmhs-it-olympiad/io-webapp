@@ -20,7 +20,7 @@ export default TileBox;
     display: flex;
     width: 100%;
 
-    @media (max-width: 780px) {
+    @media (max-width: 1080px) {
       flex-flow: column-reverse nowrap;
     }
   }

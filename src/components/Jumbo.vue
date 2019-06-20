@@ -47,7 +47,7 @@ export default Jumbo;
     background-repeat: no-repeat;
     color: #31283c;
 
-    @media (max-width: 780px) {
+    @media (max-width: 1080px) {
       padding: 54px 20px 102px 20px;
 
       background: url('/images/jumbo-image-mobile.svg');
@@ -63,14 +63,14 @@ export default Jumbo;
     &__action {
       margin-top: 80px;
 
-      @media(max-width: 780px) {
+      @media(max-width: 1080px) {
         margin-top: 48px;
       }
 
       button {
         margin-right: 20px;
 
-        @media(max-width: 780px) {
+        @media(max-width: 1080px) {
           margin-right: 10px;
         }
       }
@@ -85,7 +85,7 @@ export default Jumbo;
       font-size: 16px;
       line-height: 24px;
 
-      @media (max-width: 780px) {
+      @media (max-width: 1080px) {
         font-size: 14px;
         line-height: 22px;
 
@@ -101,7 +101,7 @@ export default Jumbo;
       line-height: 100px;
       margin: 24px 0;
 
-      @media (max-width: 780px) {
+      @media (max-width: 1080px) {
         font-size: 40px;
         line-height: 48px;
         margin: 16px 0;
@@ -111,7 +111,7 @@ export default Jumbo;
     &__school {
       font-size: 24px;
 
-      @media (max-width: 780px) {
+      @media (max-width: 1080px) {
         font-size: 14px;
       }
     }

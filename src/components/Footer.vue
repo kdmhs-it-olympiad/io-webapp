@@ -26,7 +26,7 @@
         color: #494251;
     }
 
-    @media (max-width: 780px) {
+    @media (max-width: 1080px) {
       padding: 40px 20px;
     }
 
@@ -37,7 +37,7 @@
 
       margin-bottom: 12px;
 
-      @media (max-width: 780px) {
+      @media (max-width: 1080px) {
         font-size: 14px;
       }
     }
@@ -47,7 +47,7 @@
       line-height: 22px;
       color: $footer__font--info;
 
-      @media (max-width: 780px) {
+      @media (max-width: 1080px) {
         font-size: 12px;
         line-height: 20px;
       }
