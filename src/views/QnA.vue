@@ -76,11 +76,18 @@ export default QnA;
       display: flex;
       padding: 50px 120px;
       margin: 0 -40px;
+      @media (max-width: 1080px) {
+        flex-wrap: wrap;
+      }
     }
 
     &__section {
       width: 50%;
       padding: 0 40px;
+
+      @media (max-width: 1080px) {
+        width: 100%;
+      }
     }
 
     &__subheader {
