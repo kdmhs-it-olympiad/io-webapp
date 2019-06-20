@@ -33,6 +33,14 @@ export default new Router({
       },
     },
     {
+      path: '/info',
+      name: 'info',
+      component: () => import('@/views/Info.vue'),
+      meta: {
+        title: '대회정보',
+      },
+    },
+    {
       path: '/policy',
       name: 'policy',
       component: () => import('@/views/policy.vue'),
