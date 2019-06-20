@@ -1,17 +1,16 @@
 <script>
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Prop } from 'vue-property-decorator';
 import Medal from '@/assets/icon-medal.svg';
 import { mapState } from 'vuex';
 
 @Component({
-  computed: {
-    ...mapState(['navbar']),
-  },
   components: {
     Medal,
   },
 })
 class Navbar extends Vue {
+  @Prop({ type: Boolean }) dark;
+
   ready() {
     alert('준비중입니다.');
   }
@@ -23,22 +22,22 @@ export default Navbar;
 <template>
   <div :class="{
     'Navbar': true,
-    'Navbar--invert': navbar.invert,
+    'Navbar--invert': dark,
   }">
     <div class="Navbar__inner">
       <router-link :class="{
         'Navbar__brand': true,
-        'Navbar__brand--invert': navbar.invert,
+        'Navbar__brand--invert': dark,
       }" to="/">
         <medal :style="{
-          fill: navbar.invert ? 'white' : 'black',
+          fill: dark ? 'white' : 'black',
         }"></medal>
         <p>전국 중학생 IT 올림피아드</p>
       </router-link>
 
       <ul :class="{
         'Navbar__links': true,
-        'Navbar__links--invert': navbar.invert,
+        'Navbar__links--invert': dark,
       }">
         <li><a href="/#example-tile">종목안내</a></li>
         <li><router-link to="/info">대회 정보</router-link></li>

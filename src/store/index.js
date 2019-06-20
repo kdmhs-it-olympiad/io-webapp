@@ -5,15 +5,18 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    navbar: {
-      invert: false,
+    pageHero: {
+      show: false,
+      text: '',
     },
     isPopupOpened: false,
   },
   mutations: {
-    updateNavbar(state, payload) {
-      state.navbar = payload;
+
+    updatePageHero(state, payload) {
+      state.pageHero = payload;
     },
+
     popupOpened(state) {
       state.isPopupOpened = true;
     },

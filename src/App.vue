@@ -2,11 +2,13 @@
 import { Component, Vue } from 'vue-property-decorator';
 import IoFooter from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
+import PageHero from '@/components/PageHero.vue';
 
 @Component({
   components: {
     IoFooter,
     Navbar,
+    PageHero,
   },
 })
 class App extends Vue {
@@ -33,7 +35,10 @@ export default App;
 <template>
   <div class="App">
     <div class="App__contents" v-if="!isIE">
-      <navbar></navbar>
+      <navbar :dark="$store.state.pageHero.show"></navbar>
+      <page-hero
+        v-if="$store.state.pageHero.show"
+        :text="$store.state.pageHero.text"></page-hero>
       <router-view></router-view>
     </div>
 

@@ -8,9 +8,7 @@ import PageHero from '@/components/PageHero.vue';
   },
 })
 class Notice extends Vue {
-  mounted() {
-    this.$store.commit('updateNavbar', { invert: true });
-  }
+
 }
 
 export default Notice;

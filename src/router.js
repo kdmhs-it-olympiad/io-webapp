@@ -1,10 +1,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/views/Home.vue';
+import store from '@/store';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -22,6 +23,7 @@ export default new Router({
       component: () => import('@/views/QnA.vue'),
       meta: {
         title: '질문과 답변',
+        pageHero: '질문과 답변',
       },
     },
     {
@@ -30,6 +32,7 @@ export default new Router({
       component: () => import('@/views/Notice.vue'),
       meta: {
         title: '공지사항',
+        pageHero: '공지사항',
       },
     },
     {
@@ -38,6 +41,7 @@ export default new Router({
       component: () => import('@/views/Info.vue'),
       meta: {
         title: '대회정보',
+        pageHero: '올림피아드 대회정보',
       },
     },
     {
@@ -50,3 +54,21 @@ export default new Router({
     },
   ],
 });
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.pageHero) {
+    store.commit('updatePageHero', {
+      show: true,
+      text: to.meta.pageHero,
+    });
+  } else {
+    store.commit('updatePageHero', {
+      show: false,
+      text: '',
+    });
+  }
+
+  next();
+});
+
+export default router;

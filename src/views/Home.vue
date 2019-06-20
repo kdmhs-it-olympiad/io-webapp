@@ -29,7 +29,6 @@ class Home extends Vue {
   posterPopup = false;
 
   mounted() {
-    this.$store.commit('updateNavbar', { invert: false });
     if (this.$store.state.isPopupOpened) return;
 
     setTimeout(() => {
