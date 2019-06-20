@@ -21,7 +21,7 @@ export default Navbar;
 
       <ul class="Navbar__links">
         <li><a href="#example-tile">종목안내</a></li>
-        <li><a href="/pdf/schedule.pdf" target="_blank">행사일정</a></li>
+        <li><a href="https://drive.google.com/uc?id=1xg0mbEQLPOyvQ6OOox8ZabwMuu8wJQCp" target="_blank">행사일정</a></li>
         <li><a href="#notice-tile">공지사항</a></li>
         <li @click.stop="ready"><a href="#">질문과 답변</a></li>
       </ul>
