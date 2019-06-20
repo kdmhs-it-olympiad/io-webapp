@@ -4,6 +4,7 @@ import Vue from 'vue';
 import AsyncComputed from 'vue-async-computed';
 import App from './App.vue';
 import router from './router';
+import store from './store';
 
 // eslint-disable-next-line
 import 'reset-css';
@@ -24,5 +25,6 @@ router.beforeEach((to, from, next) => {
 
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app');

@@ -1,13 +1,19 @@
 <script>
 import { Component, Vue } from 'vue-property-decorator';
 import IoFooter from '@/components/Footer.vue';
+import Navbar from '@/components/Navbar.vue';
 
 @Component({
   components: {
     IoFooter,
+    Navbar,
   },
 })
 class App extends Vue {
+  navbar = {
+    invert: false,
+  };
+
   get isIE() {
     const agent = navigator.userAgent.toLowerCase();
 
@@ -27,6 +33,7 @@ export default App;
 <template>
   <div class="App">
     <div class="App__contents" v-if="!isIE">
+      <navbar></navbar>
       <router-view></router-view>
     </div>
 

@@ -1,6 +1,5 @@
 <script>
 import { Component, Vue } from 'vue-property-decorator';
-import Navbar from '@/components/Navbar.vue';
 import Jumbo from '@/components/Jumbo.vue';
 import TileBox from '@/components/TileBox.vue';
 import NoticeTile from '@/components/NoticeTile.vue';
@@ -10,7 +9,6 @@ import PosterPopup from '@/components/PosterPopup.vue';
 
 @Component({
   components: {
-    Navbar,
     Jumbo,
     TileBox,
     NoticeTile,
@@ -31,8 +29,12 @@ class Home extends Vue {
   posterPopup = false;
 
   mounted() {
+    this.$store.commit('updateNavbar', { invert: false });
+    if (this.$store.state.isPopupOpened) return;
+
     setTimeout(() => {
       this.posterPopup = true;
+      this.$store.commit('popupOpened');
     }, 1000);
   }
 
@@ -46,7 +48,6 @@ export default Home;
 
 <template>
   <div class="Home">
-    <navbar></navbar>
     <jumbo
       @request-open-apply-modal="applyModalVisible = true"
       @request-open-apply-check-modal="applyCheckModalVisible = true" />
