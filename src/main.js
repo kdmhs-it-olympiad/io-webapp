@@ -11,9 +11,13 @@ import 'reset-css';
 import './main.scss';
 
 import poster from '@/assets/img/poster.jpg';
+import gif from '@/assets/img/loader.gif';
 
-const image = new Image();
-image.src = poster;
+const image1 = new Image();
+image1.src = poster;
+
+const image2 = new Image();
+image2.src = gif;
 
 Vue.config.productionTip = false;
 Vue.use(AsyncComputed);

@@ -1,6 +1,7 @@
 <script>
 import { Component, Vue } from 'vue-property-decorator';
 import PageHero from '@/components/PageHero.vue';
+import loader from '@/assets/img/loader.gif';
 
 @Component({
   components: {
@@ -10,6 +11,10 @@ import PageHero from '@/components/PageHero.vue';
 class Info extends Vue {
   mounted() {
     this.$store.commit('updateNavbar', { invert: true });
+  }
+
+  get loader() {
+    return loader;
   }
 }
 
@@ -23,6 +28,7 @@ export default Info;
       <iframe
         src="https://drive.google.com/uc?id=1VHCBIeBFUBi9iTqQ6Qmqbt3hDR-DjRP_"
         type="application/pdf" width="70%" height="900px"
+        :style="`background: url(${loader}) top center no-repeat;`"
       ></iframe>
     </div>
   </div>
