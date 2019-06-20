@@ -1,5 +1,5 @@
 <script>
-import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import Medal from '@/assets/icon-medal.svg';
 import { mapState } from 'vuex';
 
