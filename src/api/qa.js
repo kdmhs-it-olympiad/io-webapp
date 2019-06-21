@@ -10,9 +10,9 @@ export default {
     });
   },
 
-  post({ content: context, email, name }) {
+  post({ content: question, email, name }) {
     return axios.post('https://io.choich.space/qa', {
-      context, email, name,
+      question, email, name,
     });
   },
 };

@@ -1,6 +1,6 @@
 <script>
 import { Component, Vue } from 'vue-property-decorator';
-import NoticeAPI from '@/api/notice';
+import QuestionAPI from '@/api/qa';
 import FormTextarea from '@/components/FormTextarea.vue';
 import FormText from '@/components/FormText.vue';
 import FormRow from '@/components/FormRow.vue';
@@ -70,7 +70,7 @@ class QnA extends Vue {
 
     try {
       this.loading.post = true;
-      await NoticeAPI.post(this.formData);
+      await QuestionAPI.post(this.formData);
 
       this.reset();
     } catch (err) {
@@ -88,7 +88,7 @@ class QnA extends Vue {
 
     try {
       this.loading.fetch = true;
-      const result = await NoticeAPI.fetch(this.offset, 15);
+      const result = await QuestionAPI.fetch(this.offset, 15);
       this.offset += 15;
       if (result.data.end) this.end = true;
       this.answers = this.answers.concat(result.data.qa);
@@ -176,7 +176,7 @@ export default QnA;
     &__content {
       display: flex;
       padding: 50px 120px;
-      margin: 0 -40px;
+      justify-content: space-between;
       @media (max-width: 1080px) {
         flex-wrap: wrap;
       }
