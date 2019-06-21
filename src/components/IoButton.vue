@@ -25,7 +25,7 @@ export default IoButton;
   <button
     :class="classes"
     :disabled="disabled"
-    @click.stop="$emit('click')">
+    @click.stop="() => !disabled && $emit('click')">
 
     <slot></slot>
   </button>
