@@ -16,7 +16,7 @@ export default Info;
   <div class="Info">
     <div class="Info__content">
       <iframe
-        src="https://drive.google.com/uc?id=1VHCBIeBFUBi9iTqQ6Qmqbt3hDR-DjRP_"
+        src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://drive.google.com/uc?id=1VHCBIeBFUBi9iTqQ6Qmqbt3hDR-DjRP_"
         type="application/pdf" width="70%" height="900px"
         :style="`background: url(${loader}) top center no-repeat;`"
       ></iframe>
