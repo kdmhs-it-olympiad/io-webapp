@@ -179,6 +179,7 @@ export default QnA;
       justify-content: space-between;
       @media (max-width: 1080px) {
         flex-wrap: wrap;
+        padding: 50px 0;
       }
     }
 
