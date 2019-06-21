@@ -71,6 +71,7 @@ class QnA extends Vue {
     try {
       this.loading.post = true;
       await QuestionAPI.post(this.formData);
+      alert('성공적으로 질문이 등록되었습니다.');
 
       this.reset();
     } catch (err) {
@@ -89,8 +90,10 @@ class QnA extends Vue {
     try {
       this.loading.fetch = true;
       const result = await QuestionAPI.fetch(this.offset, 15);
+      result.data.qa = result.data.qa.filter(v => !!v.answer);
       this.offset += 15;
       if (result.data.end) this.end = true;
+      if (result.data.qa.length < 15) this.end = true;
       this.answers = this.answers.concat(result.data.qa);
     } catch (err) {
       alert('문제가 생겼습니다.');
@@ -149,6 +152,7 @@ export default QnA;
       <div class="QnA__section">
         <h2 class="QnA__subheader">답변</h2>
         <div class="QnA__answers">
+          <div v-if="answers.length === 0">등록된 답변이 아직 없습니다.</div>
           <div v-for="(answer, i) in answers" :key="`answer-${i}`" class="QnA__answer-wrapper">
             <div class="QnA__answer QnA__answer--q">
               {{ 'Q. ' + answer.question }}
