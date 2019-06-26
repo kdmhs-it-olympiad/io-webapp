@@ -151,26 +151,37 @@ class ApplyModal extends Vue {
       .values(this.formDataValidate)
       .flatMap(i => (typeof i === 'object' ? Object.values(i) : i))
       .some(Boolean);
-
-    if (!a) {
-      try {
-        const result = await ContestAPI.apply(this.formData);
-        if (result.status === 200) {
-          alert('신청을 성공했습니다.');
-          location.reload();
-        } else {
-          alert('신청중에 문제가 발생했습니다.');
-          this.loading = false;
-        }
-
-        this.loading = false;
-      } catch (e) {
-        alert('신청중에 문제가 발생했습니다.');
-        this.loading = false;
-      }
-    } else {
+    if (a) {
       this.loading = false;
+      return;
     }
+    try {
+      await ContestAPI.apply(this.formData);
+      this.loading = false;
+      alert('신청을 성공했습니다.');
+      location.reload()
+    } catch (e) {
+      if (!e.response) alert('네트워크에 문제가 있습니다.');
+      else {
+        switch (e.response.status) {
+          case 406:
+            alert('신청 시간이 아닙니다.');
+            break;
+          case 409:
+            alert('이미 신청이 존재하는 보호자 휴대폰 번호입니다.')
+            break;
+          case 400:
+            alert('jpg, png, gif 사진만 가능합니다.');
+            break;
+          case 413:
+            alert('사진이 너무 큽니다. 2MB 이하로 올려주세요.');
+            break;
+          default:
+            alert('신청중에 문제가 발생했습니다.');
+        }
+      }
+    }
+    this.loading = false;
   }
 }
 
@@ -320,7 +331,7 @@ export default ApplyModal;
             error="증명사진은 필수로 올려야합니다"
             button="이미지 업로드"
             files=".png, .jpg, .jpeg"
-            description="* 일체의 수정을 거치지 않은 명함판 사진(여권용, 5cm X 7cm)만 등록 가능합니다"
+            description="* 일체의 수정을 거치지 않은 명함판 사진(여권용, 5cm X 7cm)만 등록 가능합니다. 신청시 증명사진은 jpg, png, gif만 가능하며, 3MB를 초과하면 안됩니자"
             v-model="formData.image"
             name="profile">
           </form-file>
