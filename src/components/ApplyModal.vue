@@ -159,7 +159,7 @@ class ApplyModal extends Vue {
       await ContestAPI.apply(this.formData);
       this.loading = false;
       alert('신청을 성공했습니다.');
-      location.reload()
+      location.reload();
     } catch (e) {
       if (!e.response) alert('네트워크에 문제가 있습니다.');
       else {
