@@ -168,13 +168,13 @@ class ApplyModal extends Vue {
             alert('신청 시간이 아닙니다.');
             break;
           case 409:
-            alert('이미 신청이 존재하는 보호자 휴대폰 번호입니다.')
+            alert('이미 신청이 존재하는 보호자 휴대폰 번호입니다.');
             break;
           case 400:
             alert('jpg, png, gif 사진만 가능합니다.');
             break;
           case 413:
-            alert('사진이 너무 큽니다. 2MB 이하로 올려주세요.');
+            alert('사진이 너무 큽니다. 3MB 이하로 올려주세요.');
             break;
           default:
             alert('신청중에 문제가 발생했습니다.');
@@ -331,7 +331,10 @@ export default ApplyModal;
             error="증명사진은 필수로 올려야합니다"
             button="이미지 업로드"
             files=".png, .jpg, .jpeg"
-            description="* 일체의 수정을 거치지 않은 명함판 사진(여권용, 5cm X 7cm)만 등록 가능합니다. 신청시 증명사진은 jpg, png, gif만 가능하며, 3MB를 초과하면 안됩니자"
+            :description="
+            '* 일체의 수정을 거치지 않은 명함판 사진(여권용, 5cm X 7cm)만 등록 가능합니다.' +
+            '신청시 증명사진은 jpg, png, gif만 가능하며, 3MB를 초과하면 안됩니다.'
+            "
             v-model="formData.image"
             name="profile">
           </form-file>
