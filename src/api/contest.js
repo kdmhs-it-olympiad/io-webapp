@@ -16,7 +16,7 @@ export default {
       detail_address: data.addressDetail,
       sector: data.sector,
       password: data.password,
-      launch_number: data.lunchCount,
+      lunch_number: data.lunchCount,
     };
 
     const formData = new FormData();

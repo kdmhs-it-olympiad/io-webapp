@@ -2,20 +2,20 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component()
-class Notice extends Vue {
+class Upload extends Vue {
 
 }
 
-export default Notice;
+export default Upload;
 </script>
 
 <template>
-  <div class="Notice">
+  <div class="Upload">
   </div>
 </template>
 
-<style lang="scss" scoped>
-  .Notice {
+<style lang="scss">
+  .Upload {
 
   }
 </style>

@@ -19,7 +19,7 @@ export default NoticeTile;
 <template>
   <tile
     id="notice-tile"
-    class="Notice"
+    class="Notice-Tile"
     title="공지사항">
 
     <notice-item :date="new Date(1561014004226)">
@@ -41,10 +41,10 @@ export default NoticeTile;
   </tile>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import '../styles/color';
 
-  .Notice {
+  .Notice-Tile {
     background-color: $notice__back;
 
     &__link {

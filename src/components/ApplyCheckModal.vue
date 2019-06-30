@@ -252,7 +252,7 @@ export default ApplyCheckModal;
       </modal-header>
       <div class="ApplyCheckModal__body">
         <div class="ApplyCheckModal__info-wrapper">
-          <img class="ApplyCheckModal__image" :src="'https://file.choich.space' + result.photo">
+          <img class="ApplyCheckModal__image" :src="`https://file.choich.space/photo/${result.photo}`">
           <div class="ApplyCheckModal__text-wrapper">
             <p class="ApplyCheckModal__text ApplyCheckModal__text--bold">{{ result.name }}</p>
             <p class="ApplyCheckModal__text">

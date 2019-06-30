@@ -10,12 +10,12 @@ export default Notice;
 </script>
 
 <template>
-  <div class="Notice">
+  <div class="Notice-Admin">
   </div>
 </template>
 
 <style lang="scss" scoped>
-  .Notice {
+  .Notice-Admin {
 
   }
 </style>

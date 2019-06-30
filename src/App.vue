@@ -35,7 +35,9 @@ export default App;
 <template>
   <div class="App">
     <div class="App__contents" v-if="!isIE">
-      <navbar :dark="$store.state.pageHero.show"></navbar>
+      <navbar
+        v-if="!$route.path.includes('admin')"
+        :dark="$store.state.pageHero.show"></navbar>
       <page-hero
         v-if="$store.state.pageHero.show"
         :text="$store.state.pageHero.text"></page-hero>

@@ -95,7 +95,7 @@ export default Policy;
     </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .Policy {
     padding: 16px;
     box-sizing: border-box;

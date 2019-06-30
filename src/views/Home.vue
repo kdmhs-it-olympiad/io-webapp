@@ -64,7 +64,7 @@ export default Home;
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .Home {
   }
 </style>

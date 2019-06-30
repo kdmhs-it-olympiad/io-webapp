@@ -24,7 +24,7 @@ export default Info;
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .Info {
     &__content {
       display: flex;

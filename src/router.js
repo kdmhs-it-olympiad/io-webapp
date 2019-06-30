@@ -52,6 +52,37 @@ const router = new Router({
         title: '개인정보 처리방침',
       },
     },
+    {
+      path: '/admin',
+      component: () => import('@/views/admin/AdminWrapper.vue'),
+      children: [
+        {
+          path: '',
+          name: 'admin/login',
+          component: () => import('@/views/admin/Login.vue'),
+        },
+        {
+          path: '/admin/check',
+          name: 'admin/check',
+          component: () => import('@/views/admin/Check.vue'),
+        },
+        {
+          path: '/admin/notice',
+          name: 'admin/notice',
+          component: () => import('@/views/admin/Notice.vue'),
+        },
+        {
+          path: '/admin/qna',
+          name: 'admin/qna',
+          component: () => import('@/views/admin/QnA.vue'),
+        },
+        {
+          path: '/admin/upload',
+          name: 'admin/upload',
+          component: () => import('@/views/admin/Upload.vue'),
+        },
+      ],
+    },
   ],
 });
 
@@ -66,6 +97,11 @@ router.beforeEach((to, from, next) => {
       show: false,
       text: '',
     });
+  }
+  const splitted = to.path.trim().split('/');
+  if (splitted[1] === 'admin' && splitted.length > 2 && !store.getters.isAdmin) {
+    next('/admin');
+    return;
   }
 
   next();
