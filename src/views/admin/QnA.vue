@@ -5,6 +5,7 @@ import AdminAPI from '@/api/admin';
 import FormText from '@/components/FormText.vue';
 import FormTextarea from '@/components/FormTextarea.vue';
 import IoButton from '@/components/IoButton.vue';
+import loader from '@/assets/img/loader.gif';
 
 @Component({
   components: { FormText, FormTextarea, IoButton },
@@ -30,6 +31,10 @@ class QnA extends Vue {
 
   async created() {
     await this.refresh();
+  }
+
+  get loader() {
+    return loader;
   }
 
   get noAnswerList() {
@@ -178,6 +183,9 @@ export default QnA;
         </tr>
       </tbody>
     </table>
+    <div style="text-align: center;" v-if="loading">
+      <img :src="loader">
+    </div>
   </div>
 </template>
 

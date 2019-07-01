@@ -4,6 +4,7 @@ import Fuse from 'fuse.js';
 import AdminAPI from '@/api/admin';
 import FormText from '@/components/FormText.vue';
 import IoButton from '@/components/IoButton.vue';
+import loader from '@/assets/img/loader.gif';
 
 @Component({
   components: { FormText, IoButton },
@@ -20,6 +21,10 @@ class Check extends Vue {
   photoClicked = {};
 
   showAllPhotos = false;
+
+  get loader() {
+    return loader;
+  }
 
   async created() {
     this.loading = true;
@@ -137,7 +142,9 @@ export default Check;
         </template>
       </tbody>
     </table>
-    <p style="text-align: center; font-size: 3rem;" v-if="loading">로딩중...</p>
+    <div style="text-align: center;" v-if="loading">
+      <img :src="loader">
+    </div>
   </div>
 </template>
 
