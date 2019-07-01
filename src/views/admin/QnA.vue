@@ -149,8 +149,20 @@ export default QnA;
           <td class="io-td">{{ v.email }}</td>
           <td class="io-td">{{ v.create_datetime }}</td>
           <td class="io-td">{{ v.question }} </td>
-          <td class="io-td QnA__click" v-if="v.answer && openedAnswer !== i" @click="setAnswerOpen(i)">{{ v.answer }} </td>
-          <td class="io-td QnA__click" v-else-if="openedAnswer !== i" @click="setAnswerOpen(i)">클릭해서 답변달기</td>
+          <td
+          class="io-td QnA__click"
+            v-if="v.answer && openedAnswer !== i"
+            @click="setAnswerOpen(i)"
+          >
+            {{ v.answer }}
+          </td>
+          <td
+            class="io-td QnA__click"
+            v-else-if="openedAnswer !== i"
+            @click="setAnswerOpen(i)"
+          >
+            클릭해서 답변달기
+          </td>
           <td class="io-td" v-if="openedAnswer === i">
             <form-textarea v-model="answer"></form-textarea>
             <div class="QnA__buttons">

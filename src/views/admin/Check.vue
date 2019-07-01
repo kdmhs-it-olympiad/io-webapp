@@ -1,5 +1,5 @@
 <script>
-import { Component, Vue, Watch } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import Fuse from 'fuse.js';
 import AdminAPI from '@/api/admin';
 import FormText from '@/components/FormText.vue';
