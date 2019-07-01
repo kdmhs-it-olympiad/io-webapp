@@ -162,7 +162,7 @@ export default QnA;
             {{ v.answer }}
           </td>
           <td
-            class="io-td QnA__click"
+            class="io-td QnA__click-to-answer"
             v-else-if="openedAnswer !== i"
             @click="setAnswerOpen(i)"
           >
@@ -242,10 +242,18 @@ export default QnA;
     &__click {
       cursor: pointer;
     }
+
+    &__click-to-answer {
+      cursor: pointer;
+      text-align: center !important;
+      font-weight: bold;
+      font-style: italic;
+    }
   }
 
-  .io-td:nth-child(5), .io-td:nth-child(7) {
+  .io-td:nth-child(5), .io-td:nth-child(6) {
     line-height: 1.25;
     padding: 1rem 1.5rem;
+    text-align: left;
   }
 </style>
