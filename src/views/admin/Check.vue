@@ -105,7 +105,7 @@ export default Check;
           <th class="io-th" scope="col">상세주소</th>
           <th class="io-th" scope="col">신청부문</th>
           <th class="io-th" scope="col">얼굴사진</th>
-          <th class="io-th" scope="col">점심식사 인원</th>
+          <th class="io-th io-th--sm" scope="col">점심식사 인원</th>
         </tr>
       </thead>
       <tbody class="Check__tbody">
@@ -120,7 +120,7 @@ export default Check;
             <td class="io-td">{{ v.phone }}</td>
             <td class="io-td">{{ v.school }}</td>
             <td class="io-td">{{ v.grade }}</td>
-            <td class="io-td">{{ v.class }}</td>
+            <td class="io-td">{{ v.klass }}</td>
             <td class="io-td">{{ v.address }}</td>
             <td class="io-td">{{ v.detail_address }}</td>
             <td class="io-td">{{ v.sector }}</td>
