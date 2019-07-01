@@ -21,6 +21,6 @@ export default {
   uploadQnA({ id, answer }) {
     const formData = new FormData();
     formData.append('answer', answer);
-    return axios.post(`https://io.choich.space/qa/${id}`, formData, getOptions());
+    return axios.patch(`https://io.choich.space/qa/${id}`, formData, getOptions());
   },
 };
