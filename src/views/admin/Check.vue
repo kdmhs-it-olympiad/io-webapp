@@ -15,20 +15,11 @@ class Check extends Vue {
 
   fuse = null;
 
-  noPhotoFuse = null;
-
   loading = false;
-
-  noPhotoCheck = false;
 
   photoClicked = {};
 
   showAllPhotos = false;
-
-  @Watch('noPhotoCheck')
-  onNoPhotoCheckChanged() {
-    this.search = '';
-  }
 
   async created() {
     this.loading = true;
@@ -39,7 +30,6 @@ class Check extends Vue {
       const keys = ['name', 'birth', 'agent_phone', 'phone', 'school', 'address', 'detail_address', 'sector'];
       const fuseOptions = { keys, threshold: 0.2 };
       this.fuse = new Fuse(this.list, fuseOptions);
-      this.noPhotoFuse = new Fuse(this.noPhotoList, fuseOptions);
     } catch (err) {
       if (!err.response) {
         alert('네트워크에 문제가 있습니다.');
@@ -60,13 +50,7 @@ class Check extends Vue {
   }
 
   get searchedList() {
-    const fuse = this.noPhotoCheck ? this.noPhotoFuse : this.fuse;
-    const list = this.noPhotoCheck ? this.noPhotoList : this.list;
-    return this.search ? fuse.search(this.search) : list;
-  }
-
-  get noPhotoList() {
-    return this.list.filter(v => !v.photo);
+    return this.search ? this.fuse.search(this.search) : this.list;
   }
 
   get computedLength() {
@@ -99,8 +83,6 @@ export default Check;
           class="Check__form-text"
           placeholder="뭐든지 검색하세요"
           label="검색"/>
-        <input class="Check__checkbox" type="checkbox" v-model="noPhotoCheck" id="cb">
-        <label class="Check__checkbox-label" for="cb"><span></span>사진 안 올린 신청자</label>
 
         <input class="Check__checkbox" type="checkbox" v-model="showAllPhotos" id="cb2">
         <label class="Check__checkbox-label" for="cb2"><span></span>신청자 사진 모두 보기</label>
