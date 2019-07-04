@@ -40,6 +40,18 @@ class Home extends Vue {
   ready() {
     alert('준비중입니다.');
   }
+
+  openApplyModal() {
+    const today = new Date();
+    const deadline = new Date('2019', '6', '8', '18');
+
+    if (today >= deadline) {
+      alert('예선 신청이 마감되었습니다.');
+      return;
+    }
+
+    this.applyModalVisible = true;
+  }
 }
 
 export default Home;
@@ -48,7 +60,7 @@ export default Home;
 <template>
   <div class="Home">
     <jumbo
-      @request-open-apply-modal="applyModalVisible = true"
+      @request-open-apply-modal="openApplyModal"
       @request-open-apply-check-modal="applyCheckModalVisible = true" />
 
     <countdown></countdown>
