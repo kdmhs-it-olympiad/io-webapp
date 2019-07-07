@@ -42,6 +42,15 @@ export default {
     });
   },
 
+  checkAssignment(data) {
+    return axios.get('https://io.choich.space/assignment', {
+      params: {
+        agent_phone: data.phoneNumber,
+        password: data.password,
+      },
+    });
+  },
+
   uploadPhoto(data) {
     const formData = new FormData();
 
@@ -56,14 +65,14 @@ export default {
     });
   },
 
-  uploadFile(data) {
+  uploadAssignment(data, submitted = false) {
     const formData = new FormData();
 
-    formData.append('file', data.file);
+    formData.append('assignment', data.assignment);
     formData.append('agent_phone', data.phoneNumber);
     formData.append('password', data.password);
 
-    return axios.post('https://io.choich.space', formData, {
+    return axios[submitted ? 'patch' : 'post']('https://io.choich.space/assignment', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },

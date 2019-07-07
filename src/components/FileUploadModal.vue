@@ -49,6 +49,8 @@ class FileUploadModal extends Vue {
 
   success = false;
 
+  submitted = false;
+
   get syncedVisible() {
     return this.visible;
   }
@@ -91,6 +93,7 @@ class FileUploadModal extends Vue {
 
     try {
       const result = await ContestAPI.checkApply(this.formData);
+      const submitted = await ContestAPI.checkAssignment(this.formData);
 
       this.result = {
         name: result.data.name,
@@ -100,6 +103,8 @@ class FileUploadModal extends Vue {
         class: result.data.klass,
         sector: result.data.sector,
       };
+
+      this.submitted = !!submitted.data.assignment;
 
       if (result.data.sector === 'programming') {
         this.success = true;
@@ -136,10 +141,10 @@ class FileUploadModal extends Vue {
     this.isLoading = true;
 
     try {
-      await ContestAPI.uploadFile({
+      await ContestAPI.uploadAssignment({
         ...this.formData,
-        file: this.file,
-      });
+        assignment: this.file,
+      }, this.submitted);
     } catch (err) {
       if (!err.response) {
         alert('네트워크에 문제가 있습니다.');
@@ -147,6 +152,12 @@ class FileUploadModal extends Vue {
       }
 
       switch (err.response.status) {
+        case 406:
+          alert('프로그래밍 부문은 과제를 올릴 수 없습니다.');
+          break;
+        case 400:
+          alert('지원하지 않는 파일 형식입니다.');
+          break;
         case 401:
           alert('비밀번호가 틀렸습니다.');
           this.reset();
@@ -164,17 +175,9 @@ class FileUploadModal extends Vue {
     }
   }
 
-  downloadAdmission() {
-    alert('2019년 7월 19일부터 가능합니다. (이후에 접속하여 수험표를 출력해주시고 대회 당일 지참해주시기 바랍니다.)');
-  }
-
   closeModal() {
     this.syncedVisible = false;
     setTimeout(() => this.reset(), 500);
-  }
-
-  get modalWidth() {
-    return (this.result && this.result.photo) ? '40vw' : '';
   }
 
   get needFileUpload() {
@@ -186,7 +189,7 @@ export default FileUploadModal;
 </script>
 
 <template>
-  <modal :visible.sync="syncedVisible" :loading="isLoading" :width="modalWidth">
+  <modal :visible.sync="syncedVisible" :loading="isLoading">
     <template v-if="success">
       <modal-header @close="closeModal()">
         {{ needFileUpload ? '파일을 성공적으로 업로드했습니다.' : '신청하신 부문의 예선 과제는 없습니다.' }}
@@ -207,14 +210,11 @@ export default FileUploadModal;
       </div>
 
       <div class="FileUploadModal__footer">
-          <io-button @click="downloadAdmission" black>수험표 받기</io-button>
-      </div>
-
-      <div class="FileUploadModal__body">
+          <io-button @click="reset" black>다시 제출하기</io-button>
       </div>
     </template>
     <template v-else-if="!result">
-      <modal-header @close="closeModal()">참가신청 확인</modal-header>
+      <modal-header @close="closeModal()">예선과제 제출</modal-header>
 
       <div class="FileUploadModal__body">
         <form @submit.prevent>
@@ -256,10 +256,13 @@ export default FileUploadModal;
     </template>
 
     <template v-else>
-      <modal-header @close="closeModal">
-        {{ result.name }}님,<br>
-        예선 과제를 제출해주세요.
+      <modal-header
+        @close="closeModal"
+        :text="!submitted
+          ? `${result.name}님,\n예선 과제를 제출해주세요.`
+          : `${result.name}님,\n이미 과제를 제출하셨습니다.\n다시 제출하실 수 있습니다.`">
       </modal-header>
+
 
       <div class="FileUploadModal__body">
         <form @submit.prevent>
@@ -269,13 +272,13 @@ export default FileUploadModal;
           </form-row>
           <form-row>
             <form-file
-              label="예선과제 파일"
+              label="예선과제 파일 선택"
               :validate="fileValidate"
               placeholder="파일을 선택하세요"
               error="파일은 필수로 선택하셔야 합니다."
               button="예선과제 업로드"
-              files=".png, .jpg, .jpeg"
-              description="* 일체의 수정을 거치지 않은 명함판 사진(여권용, 5cm X 7cm)만 등록 가능합니다"
+              files="*"
+              description=""
               v-model="file"
               name="file">
             </form-file>
