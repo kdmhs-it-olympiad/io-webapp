@@ -5,7 +5,6 @@ import CalenderAPI from '@/api/calender';
 
 @Component
 class Countdown extends Vue {
-
   @AsyncComputed({ default: '지금은요...' })
   async context() {
     const cal = await CalenderAPI.schedule();
