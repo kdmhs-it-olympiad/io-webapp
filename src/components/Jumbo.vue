@@ -53,6 +53,7 @@ export default Jumbo;
           @click="requestFileUploadModal"
         >
           예선과제 제출
+          <i class='bx bx-fw bx-right-arrow-alt'></i>
         </io-button>
       </div>
     </div>
