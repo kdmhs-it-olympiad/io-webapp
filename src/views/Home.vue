@@ -17,6 +17,7 @@ import PosterPopup from '@/components/PosterPopup.vue';
     PosterPopup,
     ApplyModal: () => import('@/components/ApplyModal.vue'),
     ApplyCheckModal: () => import('@/components/ApplyCheckModal.vue'),
+    FileUploadModal: () => import('@/components/FileUploadModal.vue'),
 
     Countdown,
   },
@@ -25,6 +26,8 @@ class Home extends Vue {
   applyModalVisible = false;
 
   applyCheckModalVisible = false;
+
+  fileUploadModalVisible = false;
 
   posterPopup = false;
 
@@ -40,18 +43,6 @@ class Home extends Vue {
   ready() {
     alert('준비중입니다.');
   }
-
-  openApplyModal() {
-    const today = new Date();
-    const deadline = new Date('2019', '6', '8', '18');
-
-    if (today >= deadline) {
-      alert('예선 신청이 마감되었습니다.');
-      return;
-    }
-
-    this.applyModalVisible = true;
-  }
 }
 
 export default Home;
@@ -60,7 +51,8 @@ export default Home;
 <template>
   <div class="Home">
     <jumbo
-      @request-open-apply-modal="openApplyModal"
+      @request-open-file-upload-modal="fileUploadModalVisible = true"
+      @request-open-apply-modal="applyModalVisible = true"
       @request-open-apply-check-modal="applyCheckModalVisible = true" />
 
     <countdown></countdown>
@@ -72,6 +64,7 @@ export default Home;
 
     <apply-modal :visible.sync="applyModalVisible"></apply-modal>
     <apply-check-modal :visible.sync="applyCheckModalVisible"></apply-check-modal>
+    <file-upload-modal :visible.sync="fileUploadModalVisible"></file-upload-modal>
     <poster-popup :visible.sync="posterPopup"></poster-popup>
   </div>
 </template>

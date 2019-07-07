@@ -55,4 +55,18 @@ export default {
       },
     });
   },
+
+  uploadFile(data) {
+    const formData = new FormData();
+
+    formData.append('file', data.file);
+    formData.append('agent_phone', data.phoneNumber);
+    formData.append('password', data.password);
+
+    return axios.post('https://io.choich.space', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+  },
 };

@@ -1,6 +1,7 @@
 <script>
 import { Component, Vue } from 'vue-property-decorator';
 import IoButton from './IoButton.vue';
+import { isApplyClosed, isFileUploadPeriod } from '@/utils/deadline';
 
 @Component({
   components: {
@@ -14,6 +15,18 @@ class Jumbo extends Vue {
 
   requestApplyCheckModal() {
     this.$emit('request-open-apply-check-modal');
+  }
+
+  requestFileUploadModal() {
+    this.$emit('request-open-file-upload-modal');
+  }
+
+  get isApplyClosed() {
+    return isApplyClosed();
+  }
+
+  get isFileUploadPeriod() {
+    return isFileUploadPeriod();
   }
 }
 
@@ -29,9 +42,17 @@ export default Jumbo;
 
       <div class="Jumbo__action">
         <io-button @click="requestApplyCheckModal" black ghost>신청 확인하기</io-button>
-        <io-button @click="requestApplyModal" black>
+        <io-button
+          v-if="!isApplyClosed"
+          @click="requestApplyModal" black>
           참가 신청하기
           <i class='bx bx-fw bx-right-arrow-alt'></i>
+        </io-button>
+        <io-button
+          v-if="isFileUploadPeriod"
+          @click="requestFileUploadModal"
+        >
+          예선과제 제출
         </io-button>
       </div>
     </div>
