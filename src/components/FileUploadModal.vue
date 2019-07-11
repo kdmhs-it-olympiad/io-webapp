@@ -109,6 +109,9 @@ class FileUploadModal extends Vue {
       if (result.data.sector === 'programming') {
         this.success = true;
       }
+
+      const photo = new Image();
+      photo.src = `https://file.choich.space/photo/${this.result.photo}`;
     } catch (err) {
       if (!err.response) {
         alert('네트워크 연결에 문제가 있습니다.');
@@ -122,6 +125,9 @@ class FileUploadModal extends Vue {
           break;
         case 404:
           this.result = {};
+          break;
+        case 406:
+          alert('예선 과제가 없는 부문입니다.');
           break;
         default:
           alert('서버에 문제가 있습니다.');
@@ -145,6 +151,7 @@ class FileUploadModal extends Vue {
         ...this.formData,
         assignment: this.file,
       }, this.submitted);
+      this.success = true;
     } catch (err) {
       if (!err.response) {
         alert('네트워크에 문제가 있습니다.');
@@ -241,7 +248,7 @@ export default FileUploadModal;
 
       <div class="FileUploadModal__footer">
           <io-button @click="submit" black>
-            확인하고 수험표 받기 <i class='bx bx-fw bx-right-arrow-alt'></i>
+            로그인 <i class='bx bx-fw bx-right-arrow-alt'></i>
           </io-button>
       </div>
     </template>
@@ -268,6 +275,7 @@ export default FileUploadModal;
         <form @submit.prevent>
           <p>예선 과제를 제출해주세요. 제출 기한은 2019년 7월 14일 18시까지입니다.</p>
           <p>파일의 크기가 크면 제출이 오래 걸릴 수 있습니다.</p>
+          <p>창업아이템 부문은 hwp, pdf 파일을 제출하실 수 있고, 컴퓨터 그래픽 부문은 jpg, png, gif 파일을 제출하실 수 있습니다.</p>
           <form-row>
           </form-row>
           <form-row>
@@ -276,7 +284,7 @@ export default FileUploadModal;
               :validate="fileValidate"
               placeholder="파일을 선택하세요"
               error="파일은 필수로 선택하셔야 합니다."
-              button="예선과제 업로드"
+              button="예선과제 선택"
               files="*"
               description=""
               v-model="file"

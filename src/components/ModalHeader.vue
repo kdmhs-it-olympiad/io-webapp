@@ -37,6 +37,7 @@ export default ModalHeader;
 
     h2 {
       margin-left: 56px;
+      word-break: keep-all;
     }
 
     @media (max-width: 1080px) {
