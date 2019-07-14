@@ -8,5 +8,5 @@ export function getApplyDeadline() {
 
 export function isFileUploadPeriod() {
   const now = new Date();
-  return now > new Date('2019', '6', '8', '11') && now < new Date('2019', '6', '14', '18');
+  return now > new Date('2019', '6', '8', '11') && now < new Date('2019', '6', '14', '23', '59', '59');
 }
