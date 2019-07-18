@@ -1,0 +1,47 @@
+table, th, td, tr{
+border-collapse: collapse;
+border: 1px solid #c4c4c4;
+}
+
+.Ticket {
+height: 100%;
+width: 100%;
+}
+
+.Ticket__title {
+padding: 15px;
+}
+
+.Ticket__photo {
+width: 3.5cm;
+height: 4.5cm;
+}
+
+.Ticket__info {
+text-align: center;
+line-height: 1.5rem;
+}
+
+.Ticket__table {
+margin: 30px auto;
+}
+
+.Ticket__cell {
+text-align: center;
+padding: 10px;
+}
+
+.Ticket__button {
+margin: 40px auto;
+text-align: center;
+}
+
+.Ticket__alert {
+padding: 0 15px;
+line-height: 1.6rem;
+text-align: center;
+}
+
+.Ticket__stamp {
+height: 150px;
+}

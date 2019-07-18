@@ -7,6 +7,8 @@ import IoButton from '@/components/IoButton.vue';
 import stamp from '@/assets/img/stamp.png';
 import map from '@/assets/img/map.jpg';
 
+import print from 'print-js';
+
 @Component({
   components: {
     IoButton,
@@ -41,17 +43,12 @@ class ContestantTicket extends Vue {
   }
 
   printTicket() {
-    const initContent = document.body.innerHTML;
-    const printContent = document.querySelector('.Ticket').innerHTML;
-
-    window.onbeforeprint = () => {
-      document.body.innerHTML = printContent;
-    };
-    window.onafterprint = () => {
-      document.body.innerHTML = initContent;
-    };
-
-    window.print();
+    print({
+      printable: 'Ticket',
+      type: 'html',
+      documentTitle: '제 14회 전국 중학생 올림피아드 수험표',
+      css: '/print.css'
+    });
   }
 }
 
@@ -60,7 +57,10 @@ export default ContestantTicket;
 
 <template>
   <div>
-    <div class="Ticket">
+    <div
+      id="Ticket"
+      class="Ticket"
+    >
       <table
         class="Ticket__table"
       >
