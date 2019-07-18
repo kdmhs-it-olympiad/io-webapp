@@ -9,6 +9,7 @@ table, th, td, tr{
 }
 
 .Ticket__title {
+  width: 120%;
   padding: 15px;
 }
 

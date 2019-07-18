@@ -47,7 +47,7 @@ class ContestantTicket extends Vue {
       printable: 'Ticket',
       type: 'html',
       documentTitle: '제 14회 전국 중학생 올림피아드 수험표',
-      css: '/print.css'
+      css: '/print.css',
     });
   }
 }
@@ -149,6 +149,7 @@ table, th, td, tr{
   width: 100%;
 
   &__title {
+    width: 120%;
     padding: 15px;
   }
 
