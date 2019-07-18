@@ -5,7 +5,6 @@ import TileBox from '@/components/TileBox.vue';
 import NoticeTile from '@/components/NoticeTile.vue';
 import EventExampleTile from '@/components/EventExampleTile.vue';
 import Countdown from '@/components/Countdown.vue';
-import PosterPopup from '@/components/PosterPopup.vue';
 
 @Component({
   components: {
@@ -13,8 +12,6 @@ import PosterPopup from '@/components/PosterPopup.vue';
     TileBox,
     NoticeTile,
     EventExampleTile,
-
-    PosterPopup,
     ApplyModal: () => import('@/components/ApplyModal.vue'),
     ApplyCheckModal: () => import('@/components/ApplyCheckModal.vue'),
     FileUploadModal: () => import('@/components/FileUploadModal.vue'),
@@ -28,17 +25,6 @@ class Home extends Vue {
   applyCheckModalVisible = false;
 
   fileUploadModalVisible = false;
-
-  posterPopup = false;
-
-  mounted() {
-    if (this.$store.state.isPopupOpened) return;
-
-    setTimeout(() => {
-      this.posterPopup = true;
-      this.$store.commit('popupOpened');
-    }, 1000);
-  }
 
   ready() {
     alert('준비중입니다.');
@@ -65,7 +51,6 @@ export default Home;
     <apply-modal :visible.sync="applyModalVisible"></apply-modal>
     <apply-check-modal :visible.sync="applyCheckModalVisible"></apply-check-modal>
     <file-upload-modal :visible.sync="fileUploadModalVisible"></file-upload-modal>
-    <poster-popup :visible.sync="posterPopup"></poster-popup>
   </div>
 </template>
 
