@@ -36,7 +36,7 @@ class ContestantTicket extends Vue {
 
   get computedSector() {
     if (this.profile.sector === 'business') return '창업 아이템';
-    if (this.profile.sector === 'graphic') return '그래픽';
+    if (this.profile.sector === 'design') return '그래픽';
     if (this.profile.sector === 'programming') return '프로그래밍';
 
     return '알 수 없음';

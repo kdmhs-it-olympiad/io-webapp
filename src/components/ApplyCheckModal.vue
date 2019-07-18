@@ -173,6 +173,14 @@ class ApplyCheckModal extends Vue {
   get modalWidth() {
     return (this.result && this.result.photo) ? '40vw' : '';
   }
+
+  get computedSector() {
+    if (this.result.sector === 'business') return '창업 아이템';
+    if (this.result.sector === 'design') return '그래픽';
+    if (this.result.sector === 'programming') return '프로그래밍';
+
+    return '알 수 없음';
+  }
 }
 
 export default ApplyCheckModal;
@@ -260,7 +268,7 @@ export default ApplyCheckModal;
               {{ `${result.school} ${result.grade}학년 ${result.class}반` }}
             </p>
             <p class="ApplyCheckModal__text">
-              {{ `${result.sector} 부문` }}
+              {{ `${computedSector} 부문` }}
             </p>
           </div>
         </div>
