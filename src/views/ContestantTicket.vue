@@ -153,7 +153,8 @@ table, th, td, tr{
   }
 
   &__photo {
-    width: 100%;
+    width: 3.5cm;
+    height: 4.5cm;
   }
 
   &__info {
