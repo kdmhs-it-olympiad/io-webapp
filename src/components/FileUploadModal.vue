@@ -95,6 +95,16 @@ class FileUploadModal extends Vue {
       const result = await ContestAPI.checkApply(this.formData);
       const submitted = await ContestAPI.checkAssignment(this.formData);
 
+      if (result.data.sector === 'programming') {
+        this.success = true;
+        return;
+      }
+
+      if (result.data.sector === 'design') {
+        alert('컴퓨터 그래픽 부문은 이메일로 과제를 제출해주세요.');
+        return;
+      }
+
       this.result = {
         name: result.data.name,
         photo: result.data.photo,
@@ -105,10 +115,6 @@ class FileUploadModal extends Vue {
       };
 
       this.submitted = !!submitted.data.assignment;
-
-      if (result.data.sector === 'programming') {
-        this.success = true;
-      }
 
       const photo = new Image();
       photo.src = `https://file.choich.space/photo/${this.result.photo}`;
