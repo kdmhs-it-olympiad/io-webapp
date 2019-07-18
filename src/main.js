@@ -12,12 +12,20 @@ import './main.scss';
 
 import poster from '@/assets/img/poster.jpg';
 import gif from '@/assets/img/loader.gif';
+import stamp from '@/assets/img/stamp.png';
+import map from '@/assets/img/map.jpg';
 
 const image1 = new Image();
 image1.src = poster;
 
 const image2 = new Image();
 image2.src = gif;
+
+const image3 = new Image();
+image3.src = stamp;
+
+const image4 = new Image();
+image4.src = map;
 
 Vue.config.productionTip = false;
 Vue.use(AsyncComputed);

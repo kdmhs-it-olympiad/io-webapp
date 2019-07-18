@@ -91,6 +91,7 @@ class ApplyCheckModal extends Vue {
       const result = await ContestAPI.checkApply(this.formData);
 
       this.result = {
+        ticketNumber: result.data.ticket_number,
         name: result.data.name,
         photo: result.data.photo,
         school: result.data.school,
@@ -161,7 +162,7 @@ class ApplyCheckModal extends Vue {
   }
 
   downloadAdmission() {
-    alert('2019년 7월 19일부터 가능합니다. (이후에 접속하여 수험표를 출력해주시고 대회 당일 지참해주시기 바랍니다.)');
+    this.$router.push({ name: 'ticket', params: { profile: this.result } });
   }
 
   closeModal() {

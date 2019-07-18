@@ -53,6 +53,15 @@ const router = new Router({
       },
     },
     {
+      path: '/ticket',
+      name: 'ticket',
+      component: () => import('@/views/ContestantTicket.vue'),
+      props: true,
+      meta: {
+        title: '수험표 출력',
+      },
+    },
+    {
       path: '/admin',
       component: () => import('@/views/admin/AdminWrapper.vue'),
       children: [
