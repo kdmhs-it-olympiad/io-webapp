@@ -20,7 +20,7 @@ export default EventExampleTile;
   <tile
     id="example-tile"
     class="EventExample"
-    title="종목 안내">
+    title="본선 안내">
 
     <example-item title="프로그래밍">
       <p slot="description">

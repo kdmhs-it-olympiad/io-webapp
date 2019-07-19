@@ -127,7 +127,7 @@ export default ContestantTicket;
       <div class="Ticket__info">
         <p> * 시험 주의사항</p>
         <p>&nbsp;&nbsp;&nbsp;준비물 : <strong>필기도구, 신분증, 수험표 (필수 지참)</strong></p>
-        <p>&nbsp;&nbsp;&nbsp;대회일시 : 2019.7.25. (목)</p>
+        <p>&nbsp;&nbsp;&nbsp;개회식 : 2019.7.25.(목) 오전 9시, 본교 신관 4층 대강당</p>
         <p>&nbsp;&nbsp;&nbsp;장소 : 경기도 안산시 단원구 사세충열로 94 한국디지털미디어고등학교</p>
         <p>&nbsp;&nbsp;&nbsp;시험장은 교내에서 확인 가능합니다.</p>
         <p>&nbsp;&nbsp;&nbsp;더 자세한 내용은 https://contest.dimigo.hs.kr 에서 확인 하실 수 있습니다.</p>
