@@ -5,7 +5,7 @@ import {
 import IoButton from '@/components/IoButton.vue';
 
 import stamp from '@/assets/img/stamp.png';
-import official_docs from '@/assets/img/official_docs.jpeg';
+import officialDocs from '@/assets/img/official_docs.jpeg';
 
 import print from 'print-js';
 
@@ -15,7 +15,7 @@ import print from 'print-js';
   },
 })
 class ContestantTicket extends Vue {
-  @Prop({ type: Object, required: true }) profile;
+  @Prop({ type: Object }) profile;
 
   created() {
     if (!this.$route.params.profile) {
@@ -24,10 +24,8 @@ class ContestantTicket extends Vue {
     }
   }
 
-  profile = this.$route.params.profile;
-
-  get official_docs() {
-    return official_docs;
+  get officialDocs() {
+    return officialDocs;
   }
 
   get stamp() {
@@ -132,7 +130,10 @@ export default ContestantTicket;
         <p>&nbsp;&nbsp;&nbsp;시험장은 교내에서 확인 가능합니다.</p>
         <p>&nbsp;&nbsp;&nbsp;더 자세한 내용은 https://contest.dimigo.hs.kr 에서 확인 하실 수 있습니다.</p>
 
-        <img class="Ticket__docs" :src="official_docs" >
+        <img
+          class="Ticket__docs"
+          :src="officialDocs"
+        >
       </div>
     </div>
   </div>

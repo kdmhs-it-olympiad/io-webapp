@@ -63,7 +63,7 @@ export default EventExampleTile;
                     - 2차 프리젠테이션 진출자 외에 귀가<br>
         13:30~13:50 대기실 입실 및 수험자 확인<br>
         14:00~16:30 2차 프리젠테이션 발표<br>
-        이후 귀가 
+        이후 귀가
       </p>
       <!-- <a slot="link" href="#">예선 과제 다운로드</a> -->
     </example-item>
