@@ -46,7 +46,7 @@ class ContestantTicket extends Vue {
     print({
       printable: 'Ticket',
       type: 'html',
-      documentTitle: '제 14회 전국 중학생 올림피아드 수험표',
+      documentTitle: '제 15회 전국 중학생 올림피아드 수험표',
       css: '/print.css',
     });
   }
@@ -76,7 +76,7 @@ export default ContestantTicket;
             class="Ticket__title"
             colspan="2"
           >
-            <p>제 14회 전국 중학생 올림피아드 수험표</p>
+            <p>제 15회 전국 중학생 올림피아드 수험표</p>
           </th>
         </thead>
         <tbody
@@ -127,8 +127,8 @@ export default ContestantTicket;
       <div class="Ticket__info">
         <p> * 시험 주의사항</p>
         <p>&nbsp;&nbsp;&nbsp;준비물 : <strong>필기도구, 신분증, 수험표 (필수 지참)</strong></p>
-        <p>&nbsp;&nbsp;&nbsp;대회일시 : 2018.7.20. (금)</p>
-        <p>&nbsp;&nbsp;&nbsp;장소 : 경기도 안산시 단원구 사세충열로 94 한국디지털미디어고등학교 (지도 참고)</p>
+        <p>&nbsp;&nbsp;&nbsp;대회일시 : 2019.7.25. (목)</p>
+        <p>&nbsp;&nbsp;&nbsp;장소 : 경기도 안산시 단원구 사세충열로 94 한국디지털미디어고등학교</p>
         <p>&nbsp;&nbsp;&nbsp;시험장은 교내에서 확인 가능합니다.</p>
         <p>&nbsp;&nbsp;&nbsp;더 자세한 내용은 https://contest.dimigo.hs.kr 에서 확인 하실 수 있습니다.</p>
 
