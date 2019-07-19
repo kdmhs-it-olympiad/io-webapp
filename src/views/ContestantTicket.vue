@@ -5,7 +5,7 @@ import {
 import IoButton from '@/components/IoButton.vue';
 
 import stamp from '@/assets/img/stamp.png';
-import map from '@/assets/img/map.jpg';
+import official_docs from '@/assets/img/official_docs.jpeg';
 
 import print from 'print-js';
 
@@ -26,8 +26,8 @@ class ContestantTicket extends Vue {
 
   profile = this.$route.params.profile;
 
-  get map() {
-    return map;
+  get official_docs() {
+    return official_docs;
   }
 
   get stamp() {
@@ -57,6 +57,13 @@ export default ContestantTicket;
 
 <template>
   <div>
+    <div class="Ticket__button">
+      <io-button
+        @click="printTicket"
+      >
+        수험표 출력하기
+      </io-button>
+    </div>
     <div
       id="Ticket"
       class="Ticket"
@@ -125,15 +132,8 @@ export default ContestantTicket;
         <p>&nbsp;&nbsp;&nbsp;시험장은 교내에서 확인 가능합니다.</p>
         <p>&nbsp;&nbsp;&nbsp;더 자세한 내용은 https://contest.dimigo.hs.kr 에서 확인 하실 수 있습니다.</p>
 
-        <img :src="map" >
+        <img class="Ticket__docs" :src="official_docs" >
       </div>
-    </div>
-    <div class="Ticket__button">
-      <io-button
-        @click="printTicket"
-      >
-        수험표 출력하기
-      </io-button>
     </div>
   </div>
 </template>
@@ -185,6 +185,10 @@ table, th, td, tr{
 
   &__stamp {
     height: 150px;
+  }
+
+  &__docs {
+    width: 793.700787px;
   }
 }
 </style>
