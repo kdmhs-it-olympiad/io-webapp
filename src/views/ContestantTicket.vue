@@ -93,7 +93,7 @@ export default ContestantTicket;
           </tr>
           <tr>
             <td class="Ticket__cell">시험부문</td>
-            <td class="Ticket__cell">{{ computedSector }} 부문</td>
+            <td class="Ticket__cell">{{ `${computedSector} 부문` }}</td>
           </tr>
           <tr>
             <td class="Ticket__cell">출신학교</td>
