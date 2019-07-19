@@ -46,7 +46,7 @@ class ContestantTicket extends Vue {
     print({
       printable: 'Ticket',
       type: 'html',
-      documentTitle: '제 15회 전국 중학생 올림피아드 수험표',
+      documentTitle: '제15회 전국 중학생 올림피아드 수험표',
       css: '/print.css',
     });
   }
@@ -76,7 +76,7 @@ export default ContestantTicket;
             class="Ticket__title"
             colspan="2"
           >
-            <p>제 15회 전국 중학생 올림피아드 수험표</p>
+            <p>제15회 전국 중학생 올림피아드 수험표</p>
           </th>
         </thead>
         <tbody
