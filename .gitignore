@@ -21,3 +21,5 @@ yarn-error.log*
 *.sw?
 
 official_docs.jpeg
+
+package-lock.json
