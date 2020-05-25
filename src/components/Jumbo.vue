@@ -1,7 +1,7 @@
 <script>
 import { Component, Vue } from 'vue-property-decorator';
-import IoButton from './IoButton.vue';
 import { isApplyClosed, isFileUploadPeriod } from '@/utils/deadline';
+import IoButton from './IoButton.vue';
 
 @Component({
   components: {

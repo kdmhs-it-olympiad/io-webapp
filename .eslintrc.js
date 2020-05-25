@@ -19,7 +19,7 @@ module.exports = {
     'no-return-assign': 'off',
     'no-restricted-globals': 'off',
     'babel/semi': 1,
-    'quote-props': 'off'
+    'quote-props': 'off',
   },
   parserOptions: {
     parser: 'babel-eslint',

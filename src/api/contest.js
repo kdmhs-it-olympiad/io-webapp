@@ -22,7 +22,7 @@ export default {
     const formData = new FormData();
 
     Object.keys(parsedData)
-      .forEach(v => formData.append(v, parsedData[v]));
+      .forEach((v) => formData.append(v, parsedData[v]));
 
     formData.append('photo', data.image);
 

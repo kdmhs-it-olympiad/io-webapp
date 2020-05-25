@@ -34,6 +34,6 @@ export default new Vuex.Store({
   },
 
   getters: {
-    isAdmin: state => !!state.token,
+    isAdmin: (state) => !!state.token,
   },
 });

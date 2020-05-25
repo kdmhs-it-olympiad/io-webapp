@@ -1,6 +1,6 @@
 import { createDecorator } from 'vue-class-component';
 
-export const AsyncComputed = options => createDecorator((component, key) => {
+export const AsyncComputed = (options) => createDecorator((component, key) => {
   if (!component.methods[key]) {
     console.error('AsyncComputed decorator can only attach to method');
   }

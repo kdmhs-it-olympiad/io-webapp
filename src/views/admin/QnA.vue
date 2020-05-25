@@ -38,7 +38,7 @@ class QnA extends Vue {
   }
 
   get noAnswerList() {
-    return this.list.filter(v => !v.answer);
+    return this.list.filter((v) => !v.answer);
   }
 
   get searchedList() {

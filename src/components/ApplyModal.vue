@@ -134,11 +134,11 @@ class ApplyModal extends Vue {
     const validate = {};
     Object
       .keys(this.formData)
-      .map(k => ({
+      .map((k) => ({
         field: k,
         result: this.formDataValidator[k](),
       }))
-      .forEach(r => validate[r.field] = r.result);
+      .forEach((r) => validate[r.field] = r.result);
 
     this.formDataValidate = validate;
   }
@@ -149,7 +149,7 @@ class ApplyModal extends Vue {
 
     const a = Object
       .values(this.formDataValidate)
-      .flatMap(i => (typeof i === 'object' ? Object.values(i) : i))
+      .flatMap((i) => (typeof i === 'object' ? Object.values(i) : i))
       .some(Boolean);
     if (a) {
       this.loading = false;

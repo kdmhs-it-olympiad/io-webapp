@@ -92,7 +92,7 @@ class QnA extends Vue {
       const result = await QuestionAPI.fetch(this.offset, 15);
       if (result.data.end) this.end = true;
       if (result.data.qa.length < 15) this.end = true;
-      result.data.qa = result.data.qa.filter(v => !!v.answer);
+      result.data.qa = result.data.qa.filter((v) => !!v.answer);
       this.offset += 15;
       this.answers = this.answers.concat(result.data.qa);
     } catch (err) {

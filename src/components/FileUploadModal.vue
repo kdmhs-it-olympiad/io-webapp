@@ -63,7 +63,7 @@ class FileUploadModal extends Vue {
     let flag = true;
 
     Object.keys(this.formDataValidator)
-      .map(k => [k, this.formDataValidator[k]()])
+      .map((k) => [k, this.formDataValidator[k]()])
       .forEach(([field, result]) => {
         this.formDataValidate[field] = result;
         if (result) flag = false;
