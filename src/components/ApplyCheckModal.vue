@@ -135,7 +135,6 @@ class ApplyCheckModal extends Vue {
         ...this.formData,
         photo: this.photo,
       });
-      console.log(result.data);
       this.$set(this.result, 'photo', result.data.photo);
     } catch (err) {
       if (!err.response) {
