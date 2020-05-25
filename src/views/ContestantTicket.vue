@@ -5,7 +5,7 @@ import {
 import IoButton from '@/components/IoButton.vue';
 
 import stamp from '@/assets/img/stamp.png';
-import officialDocs from '@/assets/img/official_docs.jpeg';
+// import officialDocs from '@/assets/img/official_docs.jpeg';
 
 import print from 'print-js';
 
@@ -24,9 +24,9 @@ class ContestantTicket extends Vue {
     }
   }
 
-  get officialDocs() {
-    return officialDocs;
-  }
+  // get officialDocs() {
+  //   return officialDocs;
+  // }
 
   get stamp() {
     return stamp;
@@ -130,10 +130,10 @@ export default ContestantTicket;
         <p>&nbsp;&nbsp;&nbsp;시험장은 교내에서 확인 가능합니다.</p>
         <p>&nbsp;&nbsp;&nbsp;더 자세한 내용은 https://contest.dimigo.hs.kr 에서 확인 하실 수 있습니다.</p>
 
-        <img
+        <!-- <img
           class="Ticket__docs"
           :src="officialDocs"
-        >
+        > -->
       </div>
     </div>
   </div>
