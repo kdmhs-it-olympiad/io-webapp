@@ -62,10 +62,6 @@ class Check extends Vue {
     return this.searchedList.length;
   }
 
-  onTableRowClick(i) {
-    console.dir(this.list[i]);
-  }
-
   showPhoto(i) {
     this.$set(this.photoClicked, i, true);
   }
@@ -116,7 +112,6 @@ export default Check;
       <tbody class="Check__tbody">
         <template>
           <tr
-            @click="onTableRowClick(i)"
             v-for="(v, i) in searchedList" :key="i" class="io-tr Check__tr">
             <td class="io-td">{{ v.id }}</td>
             <td class="io-td">{{ v.name }}</td>
